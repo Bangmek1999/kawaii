@@ -24,10 +24,10 @@ class PlantController extends Controller
      */
     public function dashboard()
     {
-        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
+        //$data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
         // return view('dashboard',['data'=>$data]);
-        return response()->json(['data'=> $data]);
-        //return view('dashboard',['data'=>$data]);
+        //return response()->json(['data'=> $data]);
+        return view('dashboard');
 
     }
         
@@ -98,5 +98,10 @@ class PlantController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function url_rawdata(){
+        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
+        
+        return response()->json($data);
     }
 }

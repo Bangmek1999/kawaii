@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/home','PlantController');
 
 Route::get('/dashboard', 'PlantController@dashboard')->name('dashboard');
+Route::get('/rawData', 'PlantController@url_rawdata')->name('url_rawdata');
