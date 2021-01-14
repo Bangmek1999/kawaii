@@ -22,6 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/home','PlantController');
 
-Route::get('/dashboard', function (){;
-return view('dashboard');
-});
+Route::get('/dashboard', 'PlantController@dashboard')->name('dashboard');

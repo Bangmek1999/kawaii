@@ -17,6 +17,21 @@ class PlantController extends Controller
         $data = DB::table('rawdata')->paginate(10);
         return view('home',['data'=>$data]);
     }
+  /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function dashboard()
+    {
+        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
+        // return view('dashboard',['data'=>$data]);
+        return response()->json(['data'=> $data]);
+        //return view('dashboard',['data'=>$data]);
+
+    }
+        
+    
 
     /**
      * Show the form for creating a new resource.
@@ -47,6 +62,7 @@ class PlantController extends Controller
      */
     public function show($id)
     {
+
         return view('plant_data.plantshow');
     }
 

@@ -41,6 +41,6 @@
         {{$data->links()}}
     </div>
 </div>
-<a   class="btn btn-secondary" href="{{ url('/dashboard') }}">DashBoard</a>
+<a   class="btn btn-secondary" href="{{ route('dashboard') }}">DashBoard</a>
 
 @stop
