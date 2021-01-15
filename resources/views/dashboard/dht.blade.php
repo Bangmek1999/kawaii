@@ -11,13 +11,13 @@
                 animationEnabled: true,
                 theme: "light2",
                 title: {
-                    text: "Temperature"
+                    text: "Humidity"
                 },
                 axisX: {
                     valueFormatString: "DD MMM YYYY",
                 },
                 axisY: {
-                    title: "DHT_temp",
+                    title: "DHT_Humidity",
                     titleFontSize: 24
                 },
                 data: [{
@@ -31,7 +31,7 @@
                 for (var i = 0; i < data.length; i++) {
                     dataPoints.push({
                         x: new Date(data[i].time_stamp),
-                        y: data[i].DHT_temp
+                        y: data[i].DHT_Humidity
                     });
                 }
                 $("#chartContainer").CanvasJSChart(options);
