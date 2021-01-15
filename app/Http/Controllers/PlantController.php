@@ -30,14 +30,31 @@ class PlantController extends Controller
         return view('dashboard');
 
     }
-        
-    
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function light()
+    {
+        return view('dashboard.light');
+    }
+
+    public function DHT()
+    {
+        return view('dashboard.DHT');
+    }
+    
+    public function EC()
+    {
+        return view('dashboard.EC');
+    }
+    public function Temp()
+    {
+        return view('dashboard.Temp');
+    }
+    
     public function create()
     {
         //

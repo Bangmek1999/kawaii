@@ -1,50 +1,45 @@
+@extends('layouts.app')
+@section('content')
 
-<!DOCTYPE HTML>
-<html>
-<head>
-<script>
-window.onload = function() {
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <img src='https://png.pngtree.com/png-vector/20190629/ourmid/pngtree-sun-icon-design-png-image_1518941.jpg' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Light</h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/light') }}">Go Dashboard</a>
+            </div>
+        </div>
 
-var dataPoints = [];
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-var options =  {
-	animationEnabled: true,
-	theme: "light2",
-	title: {
-		text: "DateTime"
-	},
-	axisX: {
-		valueFormatString: "DD MMM YYYY",
-	},
-	axisY: {
-		title: "Light",
-		titleFontSize: 24
-	},
-	data: [{
-		type: "spline", 
-		yValueFormatString: "$#,###.##",
-		dataPoints: dataPoints
-	}]
-};
+            <img src='https://static.vecteezy.com/system/resources/previews/000/442/113/non_2x/humidity-vetor-icon-vector.jpg' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Humidity </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/DHT') }}">Go Dashboard</a>
+            </div>
+        </div>
 
-function addData(data) {
-	for (var i = 0; i < data.length; i++) {
-		dataPoints.push({
-			x: new Date(data[i].time_stamp),
-			y: data[i].light
-		});
-	}
-	$("#chartContainer").CanvasJSChart(options);
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
 
-}
-$.getJSON("http://127.0.0.1:8000/rawData", addData);
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-}
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-</body>
-</html>
+            <img src='https://spng.pngfind.com/pngs/s/175-1755423_soil-clipart-soil-profile-icon-soil-png-transparent.png' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Soil Moisture </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/EC') }}">Go Dashboard</a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <img src='https://previews.123rf.com/images/yupiramos/yupiramos1801/yupiramos180129661/94612470-thermometer-for-temperature-icon-vector-illustration-design.jpg' class="card-img-top" width="200" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Temperature </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/Temp') }}">Go Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@stop
