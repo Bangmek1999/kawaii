@@ -30,3 +30,5 @@ Route::get('/dashboard/DHT', 'PlantController@DHT')->name('/dashboard/DHT');
 Route::get('/dashboard/EC', 'PlantController@EC')->name('/dashboard/EC');
 Route::get('/dashboard/Temp', 'PlantController@Temp')->name('/dashboard/Temp');
 
+Route::get('/lightandtime', 'PlantController@lightandtime')->name('/lightandtime');
+

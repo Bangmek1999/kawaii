@@ -1,49 +1,77 @@
-@extends('layouts.app')
-@section('content')
-<a class="btn btn-secondary" href="{{ route('dashboard') }}">DashBoard</a>
-<div class="container">
-    <h3>Animation</h3>
-    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">
-        <img src='https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif' class="card-img-top" width="300" height="500">
-    </div>
-    <!-- <div class="card-center" style="width: 20rem;">
-        <div class="card-body">
-            <table class="table table-brodered table-striped">
-                <tr class="table-primary">
-                    <td>ID</td>
-                    <th>Frist Name</th>
-                    <th>Light</th>
-                    <th>DHT_temp</th>
-                    <th>DHT_Humid</th>
-                    <th>EC1</th>
-                    <th>EC2</th>
-                    <th>EC3</th>
-                    <th>Temp1</th>
-                    <th>Temp2</th>
-                </tr>
-                @foreach($data as $row)
-                <tr>
-                    <td>{{$row->id}}</td>
-                    <td>{{$row->mac}}</td>
-                    <td>{{$row->light}}</td>
-                    <td>{{$row->DHT_temp}}</td>
-                    <td>{{$row->DHT_Humidity}}</td>
-                    <td>{{$row->EC1}}</td>
-                    <td>{{$row->EC2}}</td>
-                    <td>{{$row->EC3}}</td>
-                    <td>{{$row->dallas_temp1}}</td>
-                    <td>{{$row->dallas_temp2}}</td>
-                </tr>
-                @endforeach
-            </table>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/chart.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <style>
+        html,
+        body {
+            background-image: url("https://images.unsplash.com/photo-1547516508-e910d368d995?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h5> {{ Auth::user()->name }}</h5>
+            <ul>
+                @guest
+                @else
+                <li><a href="{{ route('/dashboard/light') }}"><i class="fas fa-sun"></i>Light</a></li>
+                <li><a href="{{ route('/dashboard/DHT') }}"><i class="fas fa-humidity"></i>Humidity</a></li>
+                <li><a href="{{ route('/dashboard/EC') }}"><i class="fas fa-address-card"></i>Soil Moisture</a></li>
+                <li><a href="{{ route('/dashboard/Temp') }}"><i class="fas fa-project-diagram"></i>Temperature</a></li>
+                <li><a class="fas fa-sign-out-alt" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
+                @endguest
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="info">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
 
+            </div>
         </div>
     </div>
-    <div>
-        {{$data->links()}}
-    </div> -->
 
-</div>
+</body>
 
-@stop
+</html>

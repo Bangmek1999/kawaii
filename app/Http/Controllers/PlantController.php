@@ -38,7 +38,8 @@ class PlantController extends Controller
 
     public function light()
     {
-        return view('dashboard.light');
+        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
+        return view('dashboard.light',compact('data'));
     }
 
     public function DHT()
@@ -120,5 +121,10 @@ class PlantController extends Controller
         $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
         
         return response()->json($data);
+    }
+    public function lightandtime(){
+       
+        $light_time = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->select('rawdata.light', 'rawdata.time_stamp')->get();
+        return response()->json($light_time);
     }
 }
