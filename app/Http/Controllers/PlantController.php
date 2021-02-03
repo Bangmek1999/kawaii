@@ -118,7 +118,7 @@ class PlantController extends Controller
         //
     }
     public function url_rawdata(){
-        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
+        $data = DB::table('rawdata')->where('mac','30:AE:A4:99:8E:7C')->get();
         
         return response()->json($data);
     }

@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/chart.js') }}" defer></script>
+    <script src="{{ asset('js/slide.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
 
     <!-- Fonts -->
@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/slidebar.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
         html,
@@ -40,9 +40,39 @@
     </style>
 </head>
 
-<body>
-
-    <div class="wrapper">
+<body >
+<a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">{{ Auth::user()->name }}</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="{{ route('/dashboard/light') }}">Light</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="{{ route('/dashboard/DHT') }}">Humidity</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="{{ route('/dashboard/EC') }}">Soil Moisture</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="{{ route('/dashboard/Temp') }}">Temperature</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+      </li>
+    </ul>
+  </nav>
+    <!-- <div class="wrapper">
         <div class="sidebar">
             <h5> {{ Auth::user()->name }}</h5>
             <ul>
@@ -65,12 +95,13 @@
         </div>
         <div class="main_content">
             <div class="info">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Animation_Home</h1>
 
 
             </div>
         </div>
-    </div>
+    </div> -->
+    <script src="js/stylish-portfolio.min.js"></script>
 
 </body>
 

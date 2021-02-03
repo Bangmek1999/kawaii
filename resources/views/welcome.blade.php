@@ -168,7 +168,7 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Animation1</h4>
+                                        <h4 class="card-title">Model1</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Animation1</h4>
+                                        <h4 class="card-title">Model2</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -216,7 +216,7 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Animation1</h4>
+                                        <h4 class="card-title">Model3</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Animation1</h4>
+                                        <h4 class="card-title">Model4</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -50,8 +50,8 @@
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
 
-</html> -->
-<!DOCTYPE html>
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -109,4 +109,4 @@
     $.getJSON("http://127.0.0.1:8000/lightandtime", addData);
 </script>
 
-</html>
+</html> -->
