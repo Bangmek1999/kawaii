@@ -37,71 +37,82 @@
             height: 100%;
             margin: 0;
         }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+
     </style>
 </head>
 
-<body >
-<a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">{{ Auth::user()->name }}</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="{{ route('/dashboard/light') }}">Light</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="{{ route('/dashboard/DHT') }}">Humidity</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="{{ route('/dashboard/EC') }}">Soil Moisture</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="{{ route('/dashboard/Temp') }}">Temperature</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
+<body>
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="#page-top">{{ Auth::user()->name }}</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{{ route('/dashboard/light') }}">Light</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{{ route('/dashboard/DHT') }}">Humidity</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{{ route('/dashboard/EC') }}">Soil Moisture</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{{ route('/dashboard/Temp') }}">Temperature</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-      </li>
-    </ul>
-  </nav>
-    <!-- <div class="wrapper">
-        <div class="sidebar">
-            <h5> {{ Auth::user()->name }}</h5>
-            <ul>
-                @guest
-                @else
-                <li><a href="{{ route('/dashboard/light') }}"><i class="fas fa-sun"></i>Light</a></li>
-                <li><a href="{{ route('/dashboard/DHT') }}"><i class="fas fa-humidity"></i>Humidity</a></li>
-                <li><a href="{{ route('/dashboard/EC') }}"><i class="fas fa-address-card"></i>Soil Moisture</a></li>
-                <li><a href="{{ route('/dashboard/Temp') }}"><i class="fas fa-project-diagram"></i>Temperature</a></li>
-                <li><a class="fas fa-sign-out-alt" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
-                @endguest
-            </ul>
-        </div>
-        <div class="main_content">
-            <div class="info">
-            <h1 class="h3 mb-0 text-gray-800">Animation_Home</h1>
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <script src="js/stylish-portfolio.min.js"></script>
 
-
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <h1 class="btn">
+                        <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
+                        <a href="{{ route('dashboard') }}">Dashboard</a>
+                        
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <h1>
+                        <i class="fas fa-seedling"></i>
+                        Animetion
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </h1>
+                </div>
             </div>
         </div>
-    </div> -->
-    <script src="js/stylish-portfolio.min.js"></script>
+    </div>
 
 </body>
 

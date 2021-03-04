@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -42,6 +43,16 @@
             font-weight: 200;
             height: 100%;
             margin: 0;
+        }.footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
         }
     </style>
 </head>

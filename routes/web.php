@@ -32,3 +32,7 @@ Route::get('/dashboard/Temp', 'PlantController@Temp')->name('/dashboard/Temp');
 
 Route::get('/lightandtime', 'PlantController@lightandtime')->name('/lightandtime');
 
+Route::get('/potconfig','PlantController@create')->name('/potconfig');
+Route::get('/home', 'PlantController@index')->name('home');
+Route::get('/regispot', 'PlantController@not')->name('regispot');
+

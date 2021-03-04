@@ -1,53 +1,71 @@
-<!DOCTYPE HTML>
-<html>
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <script>
-        window.onload = function() {
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <img src='https://cdn.lowgif.com/full/42238b993f1a30d9-.gif' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Light</h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/light') }}">Go Dashboard</a>
+            </div>
+        </div>
 
-            var dataPoints = [];
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-            var options = {
-                animationEnabled: true,
-                theme: "light2",
-                title: {
-                    text: "Humidity"
-                },
-                axisX: {
-                    valueFormatString: "DD MMM YYYY",
-                },
-                axisY: {
-                    title: "DHT_Humidity",
-                    titleFontSize: 24
-                },
-                data: [{
-                    type: "spline",
-                    yValueFormatString: "$#,###.##",
-                    dataPoints: dataPoints
-                }]
-            };
+            <img src='https://i.makeagif.com/media/4-04-2016/41YV5O.gif' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Humidity </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/DHT') }}">Go Dashboard</a>
+            </div>
+        </div>
 
-            function addData(data) {
-                for (var i = 0; i < data.length; i++) {
-                    dataPoints.push({
-                        x: new Date(data[i].time_stamp),
-                        y: data[i].DHT_Humidity
-                    });
-                }
-                $("#chartContainer").CanvasJSChart(options);
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
 
-            }
-            $.getJSON("http://127.0.0.1:8000/rawData", addData);
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-        }
-    </script>
-    
-</head>
+            <img src='https://lastminuteengineers.com/wp-content/uploads/arduino/Soil-Moisture-Sensor-Working.gif' class="card-img-top" width="150" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Soil Moisture </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/EC') }}">Go Dashboard</a>
+            </div>
+        </div>
 
-<body>
-    <div class="container" id="chartContainer" style="height: 400px; width: 100%;"></div>
-    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-</body>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <img src='https://static.onecms.io/wp-content/uploads/sites/38/2019/07/26204613/190726-fever-guide-gif.gif' class="card-img-top" width="200" height="220">
+            <div class="card-body">
+                <h5 class="card-title">Temperature </h5>
+                <a class="btn btn-secondary" href="{{ route('/dashboard/Temp') }}">Go Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h1 class="btn">
+                    <i class="fas fa-chart-line"></i>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                    
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h1>
+                    <i class="fas fa-seedling"></i>
+                    <a href="{{ route('home') }}">Animetion</a>               
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 
-</html>
+
+@stop
