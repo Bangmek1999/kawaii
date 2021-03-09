@@ -62,7 +62,7 @@
             <li class="sidebar-brand">
                 <a class="js-scroll-trigger" href="#page-top">{{ Auth::user()->name }}</a>
             </li>
-            <li class="sidebar-nav-item">
+            {{-- <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="{{ route('/dashboard/light') }}">Light</a>
             </li>
             <li class="sidebar-nav-item">
@@ -73,7 +73,7 @@
             </li>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="{{ route('/dashboard/Temp') }}">Temperature</a>
-            </li>
+            </li> --}}
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

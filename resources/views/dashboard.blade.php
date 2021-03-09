@@ -212,36 +212,37 @@
         }
 
         .chart {
-            position: fixed;
-            left: 100px;
-            top: 50px;
-            width: 40%;
+            position: absolute;
+            /* left: 100px;
+            top: 50px; */
+            width: 100%;
             height: auto;
         }
 
         .chart2 {
-            position: fixed;
-            left: 1000px;
-            top: 50px;
-            width: 40%;
+            position: absolute;
+            /* left: 1000px;
+            top: 50px; */
+            width: 100%;
             height: auto;
         }
 
         .chart3 {
-            position: fixed;
-            left: 100px;
-            top: 500px;
-            width: 40%;
+            position: absolute;
+            /* left: 1000px;*/
+            top: 500px; 
+            width: 100%;
             height: auto;
         }
 
         .chart4 {
-            position: fixed;
-            left: 1000px;
-            top: 500px;
-            width: 40%;
+            position: absolute;
+            /* left: 1000px;*/
+            top: 500px; 
+            width: 100%;
             height: auto;
         }
+
         .footer {
             position: absolute;
             left: 0;
@@ -253,6 +254,7 @@
             background-size: cover;
             text-align: center;
         }
+
     </style>
 
 </head>
@@ -260,16 +262,16 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 ">
                 <div class="chart" id="DHTContainer"></div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 ">
                 <div class="chart2" id="LightContainer"></div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 ">
                 <div class="chart3" id="TempContainer"></div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 ">
                 <div class="chart4" id="ECContainer"></div>
             </div>
         </div>

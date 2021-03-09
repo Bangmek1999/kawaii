@@ -16,15 +16,29 @@ class PlantController extends Controller
      */
     public function index()
     {
-        $user = DB::table('pot_users')->get();
-        foreach ($user as $value) {
-            $us = $value->User;
-            if (Auth::user()->name != $us) {
-                return view('regispot');
-            } else {
+        $user = DB::table('pot_users')->pluck('User');
+        foreach ($user as $post) {
+            if ($post == Auth::user()->name) {
                 return view('home');
-            };
+                // foreach ($post as $childPost) {
+                //     if ($childPost == Auth::user()->name) {
+                //         echo $childPost;
+                //         return view('regispot');
+                //     }
+                // }
+            }
         }
+        return view('regispot');
+
+        // foreach ($user as $value) {
+        //     $name = $value;
+        // if (Auth::user()->name != $name) {
+        //     return view('regispot');
+        // } else {
+        //     return view('home');
+        // };
+        // }
+
 
 
 
@@ -54,25 +68,25 @@ class PlantController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function light()
-    {
-        $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:A6:6C')->get();
-        return view('dashboard.light', compact('data'));
-    }
+    // public function light()
+    // {
+    //     $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:A6:6C')->get();
+    //     return view('dashboard.light', compact('data'));
+    // }
 
-    public function DHT()
-    {
-        return view('dashboard.DHT');
-    }
+    // public function DHT()
+    // {
+    //     return view('dashboard.DHT');
+    // }
 
-    public function EC()
-    {
-        return view('dashboard.EC');
-    }
-    public function Temp()
-    {
-        return view('dashboard.Temp');
-    }
+    // public function EC()
+    // {
+    //     return view('dashboard.EC');
+    // }
+    // public function Temp()
+    // {
+    //     return view('dashboard.Temp');
+    // }
 
     public function create()
     {
@@ -143,12 +157,30 @@ class PlantController extends Controller
     }
     public function url_rawdata()
     {
-        $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:8E:7C')->get();
+        $n = Auth::user()->name;
+        $y = DB::table('pot_users')->where('User' , $n )->get();
+        foreach ($y as $post) {
+           $i = $post->Mac;
+        }
+        $data = DB::table('rawdata')->where('mac', $i)->get();
         return response()->json($data);
+        // $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:8F:D8')->get();
+        // return response()->json($data);
     }
-    // public function lightandtime(){
+    public function potuser()
+    {
+        $n = Auth::user()->name;
+        $y = DB::table('pot_users')->where('User' , $n )->get();
+        foreach ($y as $post) {
+           $i = $post->Mac;
+        }
+        $data = DB::table('rawdata')->where('mac', $i)->get();
+        return response()->json($data);
+        //return view('potconfig.potcreate');
 
-    //     $light_time = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->select('rawdata.light', 'rawdata.time_stamp')->get();
-    //     return response()->json($light_time);
-    // }
+
+       
+        // $light_time = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->select('rawdata.light', 'rawdata.time_stamp')->get();
+        // return response()->json($light_time);
+    }
 }

@@ -25,14 +25,14 @@ Route::resource('/home','PlantController');
 Route::get('/dashboard', 'PlantController@dashboard')->name('dashboard');
 Route::get('/rawData', 'PlantController@url_rawdata')->name('url_rawdata');
 
-Route::get('/dashboard/light', 'PlantController@light')->name('/dashboard/light');
-Route::get('/dashboard/DHT', 'PlantController@DHT')->name('/dashboard/DHT');
-Route::get('/dashboard/EC', 'PlantController@EC')->name('/dashboard/EC');
-Route::get('/dashboard/Temp', 'PlantController@Temp')->name('/dashboard/Temp');
+// Route::get('/dashboard/light', 'PlantController@light')->name('/dashboard/light');
+// Route::get('/dashboard/DHT', 'PlantController@DHT')->name('/dashboard/DHT');
+// Route::get('/dashboard/EC', 'PlantController@EC')->name('/dashboard/EC');
+// Route::get('/dashboard/Temp', 'PlantController@Temp')->name('/dashboard/Temp');
 
-Route::get('/lightandtime', 'PlantController@lightandtime')->name('/lightandtime');
+// Route::get('/pot', 'PlantController@potuser')->name('/light');
 
-Route::get('/potconfig','PlantController@create')->name('/potconfig');
+Route::get('/potconfig','PlantController@potuser')->name('/potconfig');
 Route::get('/home', 'PlantController@index')->name('home');
 Route::get('/regispot', 'PlantController@not')->name('regispot');
 
