@@ -35,4 +35,6 @@ Route::get('/rawData', 'PlantController@url_rawdata')->name('url_rawdata');
 Route::get('/potconfig','PlantController@potuser')->name('/potconfig');
 Route::get('/home', 'PlantController@index')->name('home');
 Route::get('/regispot', 'PlantController@not')->name('regispot');
+Route::get('/chart', 'PlantController@chart')->name('chart');
+
 

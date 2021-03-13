@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/slide.js') }}" defer></script>
+    <script src="{{ asset('js/Datasensor.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
 
     <!-- Fonts -->
@@ -48,44 +49,25 @@
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
+        }.img-thumbnail{
+            position: absolute;     
+            top: 200px;  
+            left: 750px;
+            width: 20%;
+            height: 50%;
+
         }
 
     </style>
 </head>
 
 <body>
-    <a class="menu-toggle rounded" href="#">
-        <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">{{ Auth::user()->name }}</a>
-            </li>
-            {{-- <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{{ route('/dashboard/light') }}">Light</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{{ route('/dashboard/DHT') }}">Humidity</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{{ route('/dashboard/EC') }}">Soil Moisture</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{{ route('/dashboard/Temp') }}">Temperature</a>
-            </li> --}}
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </li>
-        </ul>
-    </nav>
-    <script src="js/stylish-portfolio.min.js"></script>
+    
+
+    <div class="container">
+        <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" alt="..." class="img-thumbnail">
+<h1  id="demo"></h1>
+    </div>
 
     <div class="footer">
         <div class="container">
@@ -94,7 +76,7 @@
                     <h1 class="btn">
                         <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
                         <a href="{{ route('dashboard') }}">Dashboard</a>
-                        
+
                     </h1>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -108,6 +90,9 @@
                     document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </h1>
                 </div>
             </div>

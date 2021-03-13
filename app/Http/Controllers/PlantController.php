@@ -62,6 +62,10 @@ class PlantController extends Controller
         //return response()->json(['data'=> $data]);
         return view('dashboard');
     }
+    public function chart()
+    {
+        return view('chart');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -175,6 +179,8 @@ class PlantController extends Controller
            $i = $post->Mac;
         }
         $data = DB::table('rawdata')->where('mac', $i)->get();
+
+        
         return response()->json($data);
         //return view('potconfig.potcreate');
 
