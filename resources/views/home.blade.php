@@ -27,7 +27,7 @@
     <style>
         html,
         body {
-            background-image: url("https://images.unsplash.com/photo-1547516508-e910d368d995?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+            background-image: url('../../img/3.png');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -57,6 +57,9 @@
             height: 50%;
 
         }
+        .text-name {
+            color: #ffffff !important
+        }
 
     </style>
 </head>
@@ -73,16 +76,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1 class="btn">
+                    <h1 class="btn ">
                         <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
                         <a href="{{ route('dashboard') }}">Dashboard</a>
 
                     </h1>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1>
+                    <h1 class="text-name">
                         <i class="fas fa-seedling"></i>
-                        Animetion
+                        Animation
                     </h1>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">

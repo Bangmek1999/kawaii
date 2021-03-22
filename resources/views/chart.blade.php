@@ -199,7 +199,8 @@
     <style>
         html,
         body {
-            background-image: url("https://i.pinimg.com/originals/d9/0a/71/d90a71aef02bb2d09ba5193a2569e889.jpg");
+            background-color: #afdbd2;
+            /* background-image: url("https://i.pinimg.com/originals/d9/0a/71/d90a71aef02bb2d09ba5193a2569e889.jpg"); */
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -230,7 +231,7 @@
         .chart3 {
             position: absolute;
             /* left: 1000px;*/
-            top: 500px; 
+            top: 500px;
             width: 100%;
             height: auto;
         }
@@ -238,7 +239,7 @@
         .chart4 {
             position: absolute;
             /* left: 1000px;*/
-            top: 500px; 
+            top: 500px;
             width: 100%;
             height: auto;
         }
@@ -253,6 +254,10 @@
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
+        }
+
+        .text-name {
+            color: #ffffff !important
         }
 
     </style>

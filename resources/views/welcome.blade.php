@@ -132,9 +132,9 @@
     <header class="masthead">
         <div class="container d-flex h-100 align-items-center">
             <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Smart Plant</h1>
-                <h2 class=" mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-                <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+                {{-- <h1 class="mx-auto my-0 text-uppercase">Smart Plant</h1>
+                <h2 class=" mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2> --}}
+                {{-- <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a> --}}
             </div>
         </div>
     </header>
@@ -151,7 +151,7 @@
                     </p>
                 </div>
             </div>
-            <img class="img-fluid" src="https://www.enewko.com/wp-content/uploads/2019/07/77.jpg" alt="" />
+            <img class="img-fluid" src="/img/pot.jpg"/>
         </div>
     </section>
     <!-- Projects-->

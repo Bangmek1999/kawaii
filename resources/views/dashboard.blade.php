@@ -27,7 +27,10 @@
     <style>
         html,
         body {
-            background-image: url("https://images.unsplash.com/photo-1547516508-e910d368d995?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+            /* background-image: url('../../img/3.png'); */
+            /* background-image: url("https://images.unsplash.com/photo-1547516508-e910d368d995?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"); */
+            background-color: #afdbd2;
+
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -53,11 +56,16 @@
 
         .img-thumbnail {
             position: absolute;
-            top: 200px;
-            left: 750px;
+            top: 300px;
+            left: 1500px;
             width: 20%;
             height: 50%;
 
+        }
+
+        img {
+            border-radius: 50%;
+            width: 15rem;
         }
 
     </style>
@@ -67,13 +75,13 @@
 <body>
     <br>
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <img src='https://cdn.lowgif.com/full/42238b993f1a30d9-.gif' class="card-img-top" width="150"
                     height="220">
                 <div class="card-body">
-                    <h5 class="card-title">Light</h5>
-                    <h1 class="text-center" id="Light"></h1>
+                    <h5 class="card-title text-primary">Light</h5>
+                    <h1 class="text-center text-primary" id="Light"></h1>
 
                 </div>
             </div>
@@ -83,8 +91,8 @@
                 <img src='https://i.makeagif.com/media/4-04-2016/41YV5O.gif' class="card-img-top" width="150"
                     height="220">
                 <div class="card-body">
-                    <h5 class="card-title">Humidity </h5>
-                    <h1 class="text-center" id="Humidity"></h1>
+                    <h5 class="card-title text-primary">Humidity </h5>
+                    <h1 class="text-center text-primary" id="Humidity"></h1>
                 </div>
             </div>
 
@@ -95,8 +103,8 @@
                 <img src='https://lastminuteengineers.com/wp-content/uploads/arduino/Soil-Moisture-Sensor-Working.gif'
                     class="card-img-top" width="150" height="220">
                 <div class="card-body">
-                    <h5 class="card-title">Soil Moisture </h5>
-                    <h1 class="text-center" id="EC"></h1>
+                    <h5 class="card-title text-primary">Soil Moisture </h5>
+                    <h1 class="text-center text-primary" id="EC"></h1>
                 </div>
             </div>
 
@@ -104,58 +112,56 @@
                 <img src='https://static.onecms.io/wp-content/uploads/sites/38/2019/07/26204613/190726-fever-guide-gif.gif'
                     class="card-img-top" width="200" height="220">
                 <div class="card-body">
-                    <h5 class="card-title">Temperature </h5>
-                    <h1 class="text-center" id="Temp"></h1>
-                </div>
-            </div>
-        </div>
-        {{-- <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 ">
-                <div class="card" style="width: 15rem; ">
-                    <img class="card-img-top"
-                        src="https://www.pngfind.com/pngs/m/175-1755423_soil-clipart-soil-profile-icon-soil-png-transparent.png"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h1 class="text-center" id="EC"></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" style="width: 15rem; ">
-                    <img class="card-img-top"
-                        src="https://en.pimg.jp/044/251/979/1/44251979.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h1 class="text-center" id="Temp"></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4"></div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" style="width: 15rem; " >
-                    <img class="card-img-top"
-                        src="https://e7.pngegg.com/pngimages/314/726/png-clipart-moisture-computer-icons-humidity-others-desktop-wallpaper-weather-icon.png"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h1 class="text-center" id="Humidity"></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" style="width: 15rem; ">
-                    <img class="card-img-top"
-                        src="https://png.pngtree.com/png-vector/20190629/ourmid/pngtree-sun-icon-design-png-image_1518941.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h1 class="text-center" id="Light"></h1>
-                    </div>
+                    <h5 class="card-title text-primary">Temperature </h5>
+                    <h1 class="text-center text-primary" id="Temp"></h1>
                 </div>
             </div>
         </div> --}}
+        <div class="row">
+            <div class="col-12 col-sm-6  ">
+                <div class="card-body">
+                    <img class="img" src="/img/soil.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Soil Moisture </h5>
+                        <h1 class="text" id="EC"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 ">
+                <div class="card-body">
+                    <img class="img" src="/img/temp.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Temperature</h5>
+                        <h1 class="text" id="Temp"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 ">
+                <div class="card-body">
+                    <img class="img" src="/img/humitity.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Humidity</h5>
+                        <h1 class="text" id="Humidity"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 ">
+                <div class="card-body">
+                    <img class="img" src="/img/light.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Light</h5>
+                        <h1 class="text" id="Light"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a class="btn btn-secondary" href="{{ route('chart') }}">
             <h3>แสดงกราฟ</h3>
         </a>
     </div>
+    <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" alt="..."
+        class="img-thumbnail">
+
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -170,6 +176,9 @@
                     document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </h1>
                 </div>
             </div>
