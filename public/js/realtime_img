@@ -1,0 +1,30 @@
+    var canvas = null;
+    var context = null;
+    var imageObj = null;
+
+    window.onload = function() {
+        canvas = document.getElementById('canvas');
+        context = canvas.getContext('2d');
+        imageObj = new Image();
+
+        var image = '<?php echo $filepath; ?>';
+        imageObj.src = image;
+        context.drawImage(imageObj, 0, 0);
+
+        draw();
+    }
+
+    function draw() {
+        ctx = canvas.getContext('2d');
+        ctx.fillStyle = "black";
+
+        for (var i = 0; i < 2; i++) {
+            var x = Math.random() * 400;
+            var y = Math.random() * 300;
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, 2 * Math.PI, false);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+        }
+    }

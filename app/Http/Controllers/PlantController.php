@@ -19,32 +19,11 @@ class PlantController extends Controller
         $user = DB::table('pot_users')->pluck('User');
         foreach ($user as $post) {
             if ($post == Auth::user()->name) {
-                return view('home');
-                // foreach ($post as $childPost) {
-                //     if ($childPost == Auth::user()->name) {
-                //         echo $childPost;
-                //         return view('regispot');
-                //     }
-                // }
+                return view('home');               
             }
         }
         return view('regispot');
 
-        // foreach ($user as $value) {
-        //     $name = $value;
-        // if (Auth::user()->name != $name) {
-        //     return view('regispot');
-        // } else {
-        //     return view('home');
-        // };
-        // }
-
-
-
-
-        //return view('home', compact('data'));
-        // $data = DB::table('rawdata')->paginate(10);
-        // return view('home', ['data' => $data]);
     }
     /**
      * Show the form for creating a new resource.
@@ -66,31 +45,18 @@ class PlantController extends Controller
     {
         return view('chart');
     }
+    public function admin()
+    {
+        $pot_data =PotUser::all();
+        return view('admin.admin',compact(['pot_data']));
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-    // public function light()
-    // {
-    //     $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:A6:6C')->get();
-    //     return view('dashboard.light', compact('data'));
-    // }
-
-    // public function DHT()
-    // {
-    //     return view('dashboard.DHT');
-    // }
-
-    // public function EC()
-    // {
-    //     return view('dashboard.EC');
-    // }
-    // public function Temp()
-    // {
-    //     return view('dashboard.Temp');
-    // }
+    
 
     public function create()
     {
@@ -108,10 +74,10 @@ class PlantController extends Controller
         $request->validate([
             'Potname' => 'required',
             'Mac' => 'required',
-
+            'avata' => 'required',
         ]);
         PotUser::create($request->all());
-        return redirect()->back();
+        return redirect('home');
     }
 
     /**
@@ -134,7 +100,9 @@ class PlantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data_edit= PotUser::find($id);
+        // dd($data);
+        return view('admin.edit', compact( ['data_edit']));
     }
 
     /**
@@ -146,7 +114,13 @@ class PlantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'Potname' => 'required',
+            'Mac' => 'required',
+
+        ]);
+        PotUser::find($id)->update($request->all());
+        return redirect('/admin');
     }
 
     /**
@@ -168,8 +142,6 @@ class PlantController extends Controller
         }
         $data = DB::table('rawdata')->where('mac', $i)->get();
         return response()->json($data);
-        // $data = DB::table('rawdata')->where('mac', '30:AE:A4:99:8F:D8')->get();
-        // return response()->json($data);
     }
     public function potuser()
     {
@@ -178,15 +150,7 @@ class PlantController extends Controller
         foreach ($y as $post) {
            $i = $post->Mac;
         }
-        $data = DB::table('rawdata')->where('mac', $i)->get();
-
-        
-        return response()->json($data);
-        //return view('potconfig.potcreate');
-
-
-       
-        // $light_time = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->select('rawdata.light', 'rawdata.time_stamp')->get();
-        // return response()->json($light_time);
+        $data = DB::table('rawdata')->where('mac', $i)->get();      
+        return response()->json($data);     
     }
 }

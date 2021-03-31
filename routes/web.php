@@ -20,21 +20,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/home','PlantController');
-
+Route::resource('/admin','PlantController');
 Route::get('/dashboard', 'PlantController@dashboard')->name('dashboard');
 Route::get('/rawData', 'PlantController@url_rawdata')->name('url_rawdata');
-
-// Route::get('/dashboard/light', 'PlantController@light')->name('/dashboard/light');
-// Route::get('/dashboard/DHT', 'PlantController@DHT')->name('/dashboard/DHT');
-// Route::get('/dashboard/EC', 'PlantController@EC')->name('/dashboard/EC');
-// Route::get('/dashboard/Temp', 'PlantController@Temp')->name('/dashboard/Temp');
-
-// Route::get('/pot', 'PlantController@potuser')->name('/light');
-
 Route::get('/potconfig','PlantController@potuser')->name('/potconfig');
 Route::get('/home', 'PlantController@index')->name('home');
 Route::get('/regispot', 'PlantController@not')->name('regispot');
 Route::get('/chart', 'PlantController@chart')->name('chart');
+Route::get('/admin', 'PlantController@admin')->name('admin');
+Route::put('/admin/{admin}  ','PlantController@update')->name('admin.update');
+
+Route::get('/admin', 'PlantController@admin')->name('admin');
+
+// Route::resource('/ad','adminController');    
+
 
 

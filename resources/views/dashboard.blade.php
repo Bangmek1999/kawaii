@@ -74,49 +74,7 @@
 
 <body>
     <br>
-    <div class="container">
-        {{-- <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <img src='https://cdn.lowgif.com/full/42238b993f1a30d9-.gif' class="card-img-top" width="150"
-                    height="220">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Light</h5>
-                    <h1 class="text-center text-primary" id="Light"></h1>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-                <img src='https://i.makeagif.com/media/4-04-2016/41YV5O.gif' class="card-img-top" width="150"
-                    height="220">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Humidity </h5>
-                    <h1 class="text-center text-primary" id="Humidity"></h1>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
-
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-                <img src='https://lastminuteengineers.com/wp-content/uploads/arduino/Soil-Moisture-Sensor-Working.gif'
-                    class="card-img-top" width="150" height="220">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Soil Moisture </h5>
-                    <h1 class="text-center text-primary" id="EC"></h1>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <img src='https://static.onecms.io/wp-content/uploads/sites/38/2019/07/26204613/190726-fever-guide-gif.gif'
-                    class="card-img-top" width="200" height="220">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Temperature </h5>
-                    <h1 class="text-center text-primary" id="Temp"></h1>
-                </div>
-            </div>
-        </div> --}}
+    <div class="container">    
         <div class="row">
             <div class="col-12 col-sm-6  ">
                 <div class="card-body">
@@ -158,9 +116,11 @@
         <a class="btn btn-secondary" href="{{ route('chart') }}">
             <h3>แสดงกราฟ</h3>
         </a>
+            <img  id="myImg" src="https://www.w3schools.com/jsref/compman.gif" >
     </div>
-    <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" alt="..."
-        class="img-thumbnail">
+
+    {{-- <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" alt="..."
+        > --}}
 
     <div class="footer">
         <div class="container">

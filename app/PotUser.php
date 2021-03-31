@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class PotUser extends Model
 {
     protected $fillable = [
-        'Potname', 'Mac','User'
+        'Potname', 'Mac','User','status','avata'
     ];
 }
