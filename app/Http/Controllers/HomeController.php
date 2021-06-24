@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Query\assignRole;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(auth::user()->hasRole('developer')){
+            $pot_data =PotUser::all();
+        // return response()->json($pot_data);
+        return view('home',compact('pot_data'));
+            // return view('home');
+        } 
+        
         // auth()->user()->assigmRole('admin');
         return view('home');
   

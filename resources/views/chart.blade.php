@@ -158,7 +158,7 @@
 
 
             function addData(data) {
-                for (var i = data.length - 743; i < data.length; i++) {
+                for (var i = data.length - 500; i < data.length; i++) {
                     dataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].DHT_Humidity
@@ -166,7 +166,7 @@
                 }
                 $("#DHTContainer").CanvasJSChart(options);
 
-                for (var i = data.length - 743; i < data.length; i++) {
+                for (var i = data.length - 200; i < data.length; i++) {
                     LightdataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].light
@@ -174,7 +174,7 @@
                 }
                 $("#LightContainer").CanvasJSChart(optionslight);
 
-                for (var i = data.length - 743; i < data.length; i++) {
+                for (var i = data.length - 200; i < data.length; i++) {
                     TempdataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].dallas_temp1
@@ -182,7 +182,7 @@
                 }
                 $("#TempContainer").CanvasJSChart(optionsTemp);
 
-                for (var i = data.length - 743; i < data.length; i++) {
+                for (var i = data.length - 200; i < data.length; i++) {
                     ECdataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].EC3

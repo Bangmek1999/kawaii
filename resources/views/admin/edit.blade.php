@@ -12,7 +12,7 @@
         @endforeach
     </ul>
     @endif
-    {{$data_edit}}
+    {{-- {{$data_edit}} --}}
       {!! Form::open(['action' => ['PlantController@update',$data_edit->id],'method'=>'PUT']) !!}
       <div class="col-md-6 ">
         <div class="text-center">

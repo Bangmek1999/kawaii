@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Permission;
+use App\Role;
+
 class RegisterController extends Controller
 {
     /*
@@ -64,10 +67,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+		$manager_role = Role::where('slug', 'manager')->first();
+		$manager_perm = Permission::where('slug','edit-users')->first();
+
+        // $users =new User();
+        // $users->name = $data['name'];
+        // $users->email = $data['email'];
+        // $users->password = Hash::make($data['password']);
+        // $users->save();
+       
+
+        // return back();
+         $data = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $data->roles()->attach($manager_role);
+	    $data->permissions()->attach($manager_perm);
+
+        return $data;
+         
     }
 }

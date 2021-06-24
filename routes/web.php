@@ -30,9 +30,14 @@ Route::get('/chart', 'PlantController@chart')->name('chart');
 Route::get('/admin', 'PlantController@admin')->name('admin');
 Route::put('/admin/{admin}  ','PlantController@update')->name('admin.update');
 
-Route::get('/admin', 'PlantController@admin')->name('admin');
+Route::get('/avata','PlantController@avata')->name('/avata');
+
+
+// Route::get('/admin/admin', 'PlantController@admin')->name('admin');
 
 // Route::resource('/ad','adminController');    
 
+Route::get('/roles', 'PotController@Permission');
+Route::get('/Payment', 'PlantController@Payment')->name('Payment');
 
 

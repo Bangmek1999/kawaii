@@ -19,8 +19,18 @@ class PlantController extends Controller
         $user = DB::table('pot_users')->pluck('User');
         foreach ($user as $post) {
             if ($post == Auth::user()->name) {
-                return view('home');               
+                $dataPot = PotUser::where([['User', Auth::user()->name], ['status', 2]])->first();
+                if (isset($dataPot)) {
+                    //return response()->json('no');
+                    return view('Payment');
+
+                }
+                return view('home');
             }
+        }
+         if (auth::user()->hasRole('developer')) {
+            $pot_data = PotUser::all();
+            return view('home', compact('pot_data'));
         }
         return view('regispot');
 
@@ -36,9 +46,6 @@ class PlantController extends Controller
     }
     public function dashboard()
     {
-        //$data = DB::table('rawdata')->where('mac','30:AE:A4:99:A6:6C')->get();
-        // return view('dashboard',['data'=>$data]);
-        //return response()->json(['data'=> $data]);
         return view('dashboard');
     }
     public function chart()
@@ -47,8 +54,18 @@ class PlantController extends Controller
     }
     public function admin()
     {
-        $pot_data =PotUser::all();
-        return view('admin.admin',compact(['pot_data']));
+        $pot_data = PotUser::all();
+        // return response()->json($pot_data);
+        return view('admin.admin', compact('pot_data'));
+    }
+    public function avata()
+    {
+        $n = Auth::user()->name;
+        $y = DB::table('pot_users')->where('User', $n)->get();
+        foreach ($y as $post) {
+            $i = $post->avata;
+            return response()->json($i);
+        } 
     }
     /**
      * Show the form for creating a new resource.
@@ -56,7 +73,10 @@ class PlantController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+    public function Payment()
+    {
+        return view('Payment');
+    }
 
     public function create()
     {
@@ -100,9 +120,9 @@ class PlantController extends Controller
      */
     public function edit($id)
     {
-        $data_edit= PotUser::find($id);
+        $data_edit = PotUser::find($id);
         // dd($data);
-        return view('admin.edit', compact( ['data_edit']));
+        return view('admin.edit', compact(['data_edit']));
     }
 
     /**
@@ -136,9 +156,9 @@ class PlantController extends Controller
     public function url_rawdata()
     {
         $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User' , $n )->get();
+        $y = DB::table('pot_users')->where('User', $n)->get();
         foreach ($y as $post) {
-           $i = $post->Mac;
+            $i = $post->Mac;
         }
         $data = DB::table('rawdata')->where('mac', $i)->get();
         return response()->json($data);
@@ -146,11 +166,11 @@ class PlantController extends Controller
     public function potuser()
     {
         $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User' , $n )->get();
+        $y = DB::table('pot_users')->where('User', $n)->get();
         foreach ($y as $post) {
-           $i = $post->Mac;
+            $i = $post->Mac;
         }
-        $data = DB::table('rawdata')->where('mac', $i)->get();      
-        return response()->json($data);     
+        $data = DB::table('rawdata')->where('mac', $i)->get();
+        return response()->json($data);
     }
 }
