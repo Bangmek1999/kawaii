@@ -26,8 +26,8 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
         html,
-        /* body {
-           background-image: url('../../img/seed_V1.gif');
+        body {
+            background-image: url('../../img/3.png');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -37,131 +37,157 @@
             font-weight: 200;
             height: 100%;
             margin: 0;
-        } */
+        }
 
         .footer {
-            position: fixed;
+            position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 10%;
+            max-height: 10%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
-        }.img-thumbnail{
-            position: absolute;     
-            top: 200px;  
+        }
+
+        .img-thumbnail {
+            position: absolute;
+            top: 200px;
             left: 750px;
-            width: 20%;
-            height: 50%;
+            max-width: 20%;
+            max-height: 50%;
 
         }
+
         .text-name {
             color: #ffffff !important
         }
+
         #myVideo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-width: 95%;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+        }
 
     </style>
 </head>
 
 <body>
-    @if(Auth::user()->hasRole('manager'))  
-    <h1>{{Auth::user()->name}}</h1>
+    @if (Auth::user()->hasRole('manager'))
+        <div>
 
-    <video autoplay muted loop id="myVideo">
-  <source src="/img/seedV2.mp4"  type="video/mp4">
-</video>
+            {{-- <video autoplay muted loop id="myVideo">
+            <source src="/img/wall_seed.mp4" type="video/mp4" id="player"  >
+        </video> --}}
 
-    <div class="container">
-    <!-- <video autoplay muted loop> <source src="img/seed_V2.mp4" type="video/mp4"> </video> -->
-        <!-- <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" class="img-thumbnail" id="avata"> -->
-    </div>
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1 class="btn ">
-                        <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
-                        <a href="{{ route('dashboard') }}">Dashboard</a>
 
-                    </h1>
+
+
+            <div class="container">
+                <video id="myVideo" autoplay muted loop>
+                    <source id="mp4_src" src="/img/wall_seed.mp4" type="video/mp4">
+                </video>
+                {{-- <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif"
+                class="img-thumbnail" id="avata"> --}}
+                <div class="img-thumbnail">
+                    <h1>{{ Auth::user()->name }}</h1>
+                    <h5 id="date1"> </h5>
+                    <h5 id="date2"> </h5>
+                    <h5 id="Difference_In_Days"> </h5>
+
+
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1 class="text-name">
-                        <i class="fas fa-seedling"></i>
-                        Animation
-                    </h1>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+              
+
+
+
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <h1 class="btn ">
+                                <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+
+                            </h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <h1 class="text-name">
+                                <i class="fas fa-seedling"></i>
+                                Animation
+                            </h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </h1>
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
 
-    @if(Auth::user()->hasRole('developer'))
-    <div class="container">
-        <h2>ข้อมูลลูกค้า</h2>
-        <div class="card">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">PotName</th>
-                    <th scope="col">Mac</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($pot_data as $row)
-                    <tr>
-                        <th scope="row">{{ $row->id }}</th>
-                        <td>{{ $row->User }}</td>
-                        <td>{{ $row->PotName }}</td>
-                        <td>{{ $row->Mac }}</td>
-                        <td>{{ $row->status }}</td>
-                        <td> <a href="{{route('admin.edit',$row->id)}}" class="btn btn-primary">Edit</a></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <div class="footer">
+    @if (Auth::user()->hasRole('developer'))
         <div class="container">
-            <div class="row">
-              
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <h2>ข้อมูลลูกค้า</h2>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">PotName</th>
+                            <th scope="col">Mac</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($pot_data as $row)
+                            <tr>
+                                <th scope="row">{{ $row->id }}</th>
+                                <td>{{ $row->User }}</td>
+                                <td>{{ $row->PotName }}</td>
+                                <td>{{ $row->Mac }}</td>
+                                <td>{{ $row->status }}</td>
+                                <td> <a href="{{ route('admin.edit', $row->id) }}" class="btn btn-primary">Edit</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </h1>
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     @endif
 </body>
 

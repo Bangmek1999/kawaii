@@ -140,7 +140,7 @@
                 },
                 axisX: {
                     valueFormatString: "DD MMM YY",
-                    lineColor: "#ff6384",
+                    lineColor: "#fd6884",
 
                 },
                 axisY: {

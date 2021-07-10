@@ -67,12 +67,15 @@ class PlantController extends Controller
             return response()->json($i);
         } 
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
+    public function date_avata()
+    {
+        $n = Auth::user()->name;
+        $y = DB::table('pot_users')->where('User', $n)->get();
+        foreach ($y as $post) {
+            $i = $post->created_at;
+            return response()->json($i);
+        } 
+    }
     public function Payment()
     {
         return view('Payment');
