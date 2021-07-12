@@ -68,7 +68,7 @@
             position: absolute;
             right: 0;
             bottom: 0;
-            max-width: 95%;
+            max-width: 80%;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
         }
@@ -84,7 +84,14 @@
             <source src="/img/wall_seed.mp4" type="video/mp4" id="player"  >
         </video> --}}
 
+        <div >
+            <h1>{{ Auth::user()->name }}</h1>
+            <h5 id="date1"> </h5>
+            <h5 id="date2"> </h5>
+            <h5 id="Difference_In_Days"> </h5>
 
+            
+        </div>
 
 
 
@@ -94,14 +101,7 @@
                 </video>
                 {{-- <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif"
                 class="img-thumbnail" id="avata"> --}}
-                <div class="img-thumbnail">
-                    <h1>{{ Auth::user()->name }}</h1>
-                    <h5 id="date1"> </h5>
-                    <h5 id="date2"> </h5>
-                    <h5 id="Difference_In_Days"> </h5>
-
-
-                </div>
+                
               
 
 
