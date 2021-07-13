@@ -130,19 +130,6 @@ function Datasensor(data) {
             data[i].light
         );
     }
-
-
-    // const Ecd = EcPoints.toString();
-    // const Humitity = HumitityPoints.toString();
-    // const Light = LightPoints.toString();
-    // const date = datePoint.toString();
-    // const Temp = TempPoints.toString();
-
-    // document.getElementById('Temp').innerHTML = Temp;
-    // document.getElementById('EC').innerHTML = Ecd;
-    // document.getElementById('Humidity').innerHTML = Humitity;
-    // document.getElementById('Light').innerHTML = Light;
-    // document.getElementById('date').innerHTML = date;
 }
 $.getJSON("http://127.0.0.1:8000/rawData", Datasensor);
 //-----------------------------------------------------------------------------------------------------------------

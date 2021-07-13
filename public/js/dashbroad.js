@@ -26,23 +26,113 @@ function addData(data) {
     }
 
 
-    const Ecd = EcPoints.toString();
-    const Humitity = HumitityPoints.toString();
-    const Light = LightPoints.toString();
-    const date = datePoint.toString();
-    const Temp = TempPoints.toString();
+    // const Ecd = EcPoints.toString();
+    // const Humitity = HumitityPoints.toString();
+    // const Light = LightPoints.toString();
+    // const date = datePoint.toString();
+    // const Temp = TempPoints.toString();
 
-    document.getElementById('Temp').innerHTML = Temp;
-    document.getElementById('EC').innerHTML = Ecd;
-    document.getElementById('Humidity').innerHTML = Humitity;
-    document.getElementById('Light').innerHTML = Light;
-    document.getElementById('date').innerHTML = date;
+    // document.getElementById('Temp').innerHTML = Temp;
+    // document.getElementById('EC').innerHTML = Ecd;
+    // document.getElementById('Humidity').innerHTML = Humitity;
+    // document.getElementById('Light').innerHTML = Light;
+    // document.getElementById('date').innerHTML = date;
 
 
 }
 $.getJSON("http://127.0.0.1:8000/rawData", addData);
 
 //-----------------------------------date---------------------------------------------------------------------------
+
+
+function loadJs() {
+    return test(TempPoints),
+        hu(HumitityPoints);
+
+
+}
+
+window.onload = function() {
+    setTimeout(function() {
+        loadJs();
+    }, 2000);
+}
+
+
+
+
+
+
+function test(TempPoints) {
+    let addHealth = document.getElementById('Temp_hp')
+    console.log(addHealth);
+    var x = TempPoints.toString();
+    if (10 < x && x < 15) {
+        if (addHealth) {
+            addHealth.style.width = 60 + '%';
+            addHealth.innerHTML = 60 * 1 + 'hp';
+        }
+    } else if (16 < x && x < 20) {
+        if (addHealth) {
+            addHealth.style.width = 70 + '%';
+            addHealth.innerHTML = 70 * 1 + 'hp';
+        }
+    } else if (21 < x && x < 25) {
+        addHealth.style.width = 80 + '%';
+        addHealth.innerHTML = 80 * 1 + 'hp';
+    } else if (26 < x && x < 30) {
+        if (addHealth) {
+            addHealth.style.width = 90 + '%';
+            addHealth.innerHTML = 90 * 1 + 'hp';
+        }
+    } else if (31 < x && x < 35) {
+        if (addHealth) {
+            addHealth.style.width = 100 + '%';
+            addHealth.innerHTML = 100 * 1 + 'hp';
+        }
+    }
+}
+
+
+function hu(HumitityPoints) {
+    let addHealth = document.getElementById('Humidity_hp')
+    var x = HumitityPoints.toString();
+    if (10 < x && x < 15) {
+        if (addHealth) {
+            addHealth.style.width = 60 + '%';
+            addHealth.innerHTML = 60 * 1 + 'hp';
+        }
+    } else if (16 < x && x < 20) {
+        if (addHealth) {
+            addHealth.style.width = 70 + '%';
+            addHealth.innerHTML = 70 * 1 + 'hp';
+        }
+    } else if (21 < x && x < 25) {
+        if (addHealth) {
+            addHealth.style.width = 80 + '%';
+            addHealth.innerHTML = 80 * 1 + 'hp';
+        }
+    } else if (75 < x && x < 80) {
+        if (addHealth) {
+            addHealth.style.width = 90 + '%';
+            addHealth.innerHTML = 90 * 1 + 'hp';
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //standard Ec = 30
 function add() {
@@ -146,6 +236,7 @@ function add() {
 
 function add1() {
     let addHealth = document.getElementById('Temp_hp')
+    console.log(addHealth);
     var x = TempPoints.toString();
     if (10 < x && x < 15) {
         if (addHealth) {

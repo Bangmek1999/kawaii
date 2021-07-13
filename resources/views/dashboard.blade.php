@@ -65,7 +65,7 @@
 
         img {
             border-radius: 50%;
-            width: 15rem;
+            max-width: 15rem;
         }
 
         .hp {
@@ -75,12 +75,12 @@
 
         .gage {
             display: inline-block;
-            width: 500px;
+            width: 100%;
             padding-bottom: 30px;
         }
 
         .bar {
-            height: 60px;
+            height: 50px;
             position: relative;
             background: #555;
             -moz-border-radius: 25px;
@@ -164,20 +164,17 @@
 
 <body>
 
-    <br>
+    
     <div class="container">
-        <h5 id="Temp"> </h5>
+        {{-- <h5 id="Temp"> </h5>
         <h5 id="Humidity"> </h5>
         <h5 id="EC"> </h5>
         <h5 id="Light"> </h5>
-        <h5 id="date"> </h5>
+        <h5 id="date"> </h5> --}}
 
-        <div class="click">
-            <span class="btn-3d green" onclick="add(),add1(),add2(),add3(); return true;">Health</span>
-        </div>
         <div id="ha"></div>
         <div class="row">
-            <div class="col-12 col-sm-6  ">
+            <div class="col-xs-12 col-sm-6  ">
                 <div class="card-body">
                     <img class="img" src="/img/soil.png" alt="Card image cap">
                     <div class="card-body">
@@ -188,12 +185,11 @@
                                     <span id="EC_hp" class="lvl" style="width: 100%">100hp</span>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 ">
+            <div class="col-xs-12 col-sm-6  ">
                 <div class="card-body">
                     <img class="img" src="/img/temp.png" alt="Card image cap">
                     <div class="card-body">
@@ -209,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 ">
+            <div class="col-xs-12 col-sm-6  ">
                 <div class="card-body">
                     <img class="img" src="/img/humitity.png" alt="Card image cap">
                     <div class="card-body">
@@ -225,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 ">
+            <div class="col-xs-12 col-sm-6  ">
                 <div class="card-body">
                     <img class="img" src="/img/light.png" alt="Card image cap">
                     <div class="card-body">
@@ -241,14 +237,11 @@
                     </div>
                 </div>
             </div>
-
+            {{-- <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <img  id="myImg" src="/img/seed_2.png"  >
+            </div> --}}
         </div>
-        <a class="btn btn-secondary" href="{{ route('chart') }}">
-            <h3>แสดงกราฟ</h3>
-        </a>
-        <img  id="myImg" src="/img/seed_2.png"  >
-
-        {{-- <img  id="myImg" src="https://www.w3schools.com/jsref/compman.gif" > --}}
+        
     </div>
 
 
@@ -259,13 +252,20 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 ">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <h1>
+                        <a class="btn btn-secondary" href="{{ route('chart') }}">
+                            <h3>แสดงกราฟ</h3>
+                        </a>
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
                     <h1>
                         <i class="fas fa-seedling"></i>
                         <a href="{{ route('home') }}">Animation</a>
                     </h1>
                 </div>
-                <div class="col-xs-12 col-sm-6 ">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
                     <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
@@ -275,6 +275,7 @@
                         </form>
                     </h1>
                 </div>
+                
             </div>
         </div>
     </div>

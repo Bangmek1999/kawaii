@@ -68,9 +68,75 @@
             position: absolute;
             right: 0;
             bottom: 0;
-            max-width: 80%;
+            max-width: 100%;
+            background-color: #afdbd2;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
+
+        }
+
+        .container .overlay {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            max-width: 100%;
+            z-index: 2;
+        }
+
+        .container .overlay h1 {
+            font-size: 6em;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .container .overlay h5 {
+            font-size: 1em;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hp {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .gage {
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 30px;
+        }
+
+        .bar {
+            height: 50px;
+            position: relative;
+            background: #555;
+            -moz-border-radius: 25px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .bar>span {
+            display: block;
+            height: 100%;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: rgb(43, 194, 83);
+            background-image: linear-gradient(center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+            box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lvl {
+            background-color: #078a25;
+            background-image: linear-gradient(to bottom, #078a25, #f36d0a);
         }
 
     </style>
@@ -79,33 +145,32 @@
 <body>
     @if (Auth::user()->hasRole('manager'))
         <div>
-
-            {{-- <video autoplay muted loop id="myVideo">
-            <source src="/img/wall_seed.mp4" type="video/mp4" id="player"  >
-        </video> --}}
-
-        <div >
-            <h1>{{ Auth::user()->name }}</h1>
-            <h5 id="date1"> </h5>
-            <h5 id="date2"> </h5>
-            <h5 id="Difference_In_Days"> </h5>
-
-            
-        </div>
-
-
-
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
             <div class="container">
                 <video id="myVideo" autoplay muted loop>
                     <source id="mp4_src" src="/img/wall_seed.mp4" type="video/mp4">
                 </video>
-                {{-- <img src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif"
-                class="img-thumbnail" id="avata"> --}}
-                
-              
+                <div class="overlay">
+                    <div>
+                        <h1>{{ Auth::user()->name }}</h1>
+                        <h5 id="date1"> </h5>
+                        <h5 id="date2"> </h5>
+                        <h5 id="Difference_In_Days"> </h5>
 
-
-
+                        <div class="hp">
+                            <div class="gage">
+                                <div class="bar">
+                                    <span id="EC_hp" class="lvl" style="width: 100%">100hp</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
 
             <div class="footer">
