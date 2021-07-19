@@ -147,7 +147,8 @@ window.onload = function() {
 
     function air(DHT11_air) {
         var x = DHT11_air.toString();
-        if (61 < x && x < 65) {
+        console.log(x);
+        if (1 <= x && x <= 65) {
             hp_resulte.hp_air += 25;
         } else if (66 <= x && x <= 70) {
             hp_resulte.hp_air += 50;
@@ -258,14 +259,18 @@ window.onload = function() {
         Final_Result = Result.toFixed(0);
         // document.getElementById("date1").innerHTML = date1;
         // document.getElementById("date2").innerHTML = date2;
-        document.getElementById("Difference_In_Days").innerHTML = 'อายุ' + Final_Result + '    วัน';
+        document.getElementById("Difference_In_Days").innerHTML = 'วันปลูก' + Final_Result + '    วัน';
 
 
     }
     $.getJSON("http://127.0.0.1:8000/date_avata", addDate);
 
     //-------------------------------------------avata-------------------------------------------------------------------
-    // var options = [];
+    function pot_user(user_pot) {
+        document.getElementById("User_pot").innerHTML = user_pot;
+
+    }
+    $.getJSON("http://127.0.0.1:8000/user_pot", pot_user);
 
     function avata(data) {
         if (data == 'option1') {
@@ -517,37 +522,37 @@ window.onload = function() {
 
     //---------------------------------------------sproutAvata-----------------------------------------------------------------------------------------------
     function sprout_happy() {
-        document.getElementById("mp4_src").src = "../../img/buds/happy.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/happy.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_moist() {
-        document.getElementById("mp4_src").src = "../../img/buds/moist.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/moist.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_dry() {
-        document.getElementById("mp4_src").src = "../../img/buds/dry.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/dry.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_cool() {
-        document.getElementById("mp4_src").src = "../../img/buds/cool.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/cool.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_hot() {
-        document.getElementById("mp4_src").src = "../../img/buds/hot.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/hot.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_dark() {
-        document.getElementById("mp4_src").src = "../../img/buds/dark.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/dark.mp4";
         document.getElementById("myVideo").load();
     }
 
     function sprout_light() {
-        document.getElementById("mp4_src").src = "../../img/buds/light.mp4";
+        document.getElementById("mp4_src").src = "../../img/sprout/light.mp4";
         document.getElementById("myVideo").load();
     }
 

@@ -32,6 +32,7 @@ Route::put('/admin/{admin}  ','PlantController@update')->name('admin.update');
 
 Route::get('/avata','PlantController@avata')->name('/avata');
 Route::get('/date_avata','PlantController@date_avata')->name('/date_avata');
+Route::get('/user_pot','PlantController@user_pot')->name('/user_pot');
 
 
 // Route::get('/admin/admin', 'PlantController@admin')->name('admin');

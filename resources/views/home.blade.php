@@ -28,20 +28,14 @@
 <body>
     @if (Auth::user()->hasRole('manager'))
         <div>
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
+        
             <div class="container">
                 <video id="myVideo" autoplay muted loop>
                     <source id="mp4_src" src="/img/wall_seed.mp4" type="video/mp4">
                 </video>
                 <div class="overlay">
-                    <h1>น้องดาวเรือง</h1>
-                        {{-- <h1>{{ Auth::user()->name }}</h1> --}}
-                        {{-- <h5 id="date1"> </h5>
-                        <h5 id="date2"> </h5>--}}
+                    <h1 id="User_pot"></h1>
+                    
                         
                       <h2 id="Difference_In_Days"> </h2>
                         <div class="hp">

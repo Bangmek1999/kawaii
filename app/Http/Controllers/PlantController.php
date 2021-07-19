@@ -76,6 +76,16 @@ class PlantController extends Controller
             return response()->json($i);
         } 
     }
+    public function user_pot()
+    {
+        $n = Auth::user()->name;
+        $y = DB::table('pot_users')->where('User', $n)->get();
+        foreach ($y as $post) {
+            $i = $post->PotName;
+            return response()->json($i);
+        } 
+    }
+    
     public function Payment()
     {
         return view('Payment');

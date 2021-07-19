@@ -119,7 +119,7 @@ function test(temp) {
 function hu(DHT11_air) {
     let addHealth = document.getElementById('Humidity_hp')
     var x = DHT11_air.toString();
-    if (61 <= x && x < 65) {
+    if (1 <= x && x < 65) {
         addHealth.style.width = 17.3 + '%';
 
     } else if (66 <= x && x <= 70) {

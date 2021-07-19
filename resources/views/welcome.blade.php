@@ -167,7 +167,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
+                                        <p><img class=" img-fluid" src="/img/seed_1.png"></p>
                                         <h4 class="card-title">Model1</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
@@ -191,7 +191,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
+                                        <p><img class=" img-fluid" src="/img/seed_2.png" alt="card image"></p>
                                         <h4 class="card-title">Model2</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
@@ -215,7 +215,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
+                                        <p><img class=" img-fluid" src="/img/seed_3.png" alt="card image"></p>
                                         <h4 class="card-title">Model3</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
@@ -239,7 +239,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-plant-flower-flower-pot-flowers-png-image_3779312.jpg" alt="card image"></p>
+                                        <p><img class=" img-fluid" src="/img/seed_4.png" alt="card image"></p>
                                         <h4 class="card-title">Model4</h4>
                                         <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
