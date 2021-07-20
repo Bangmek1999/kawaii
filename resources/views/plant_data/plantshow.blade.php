@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @section('content')
 <div class="container">
     <h3>ข้อมูล</h3>
@@ -48,4 +48,4 @@
     <!-- <div>
       {{$data->links()}}
     </div> -->
-@stop
+@stop --}}
