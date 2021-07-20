@@ -147,7 +147,6 @@ window.onload = function() {
 
     function air(DHT11_air) {
         var x = DHT11_air.toString();
-        console.log(x);
         if (1 <= x && x <= 65) {
             hp_resulte.hp_air += 25;
         } else if (66 <= x && x <= 70) {
@@ -219,7 +218,7 @@ window.onload = function() {
 
     function sumd() {
         result = sum.ec + sum.temp + sum.light;
-        // console.log(result);
+        console.log(result);
         if (result == "moistcooldark" || result == "moistcoollight" || result == "moisthotdark" | result == "moisthotlight" || result == "moistdark" || result == "moistlight" || result == "moistcool" || result == "moisthot" || result == "moist") {
             sum.moist = 'moist';
             console.log("Is moist");
@@ -273,6 +272,7 @@ window.onload = function() {
     $.getJSON("https://devplant.csmju.com/user_pot", pot_user);
 
     function avata(data) {
+        console.log(data);
         if (data == 'option1') {
             return option1(data);
         } else if (data == 'option2') {
@@ -284,7 +284,6 @@ window.onload = function() {
         }
     }
     $.getJSON("https://devplant.csmju.com/avata", avata);
-    // $.getJSON("http://127.0.0.1:8000/avata", avata);
 
     //----------------------------------------Option1-----------------------------------------------------------------------
     function option1(options) {
@@ -377,6 +376,7 @@ window.onload = function() {
                 } else if (sum.hot == 'hot') {
                     return sprout_hot();
                 } else if (sum.light_select == 'light') {
+                    console.log("return is true");
                     return sprout_light();
                 }
             } else if (50 >= Final_Result) {
