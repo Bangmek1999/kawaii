@@ -28,14 +28,8 @@
                         <button type="submit" class="btn btn-dark d-block w-75 mx-auto">Upload</button>
                     </form>
                 </div>
-                {{-- @include('components.errors') --}}
             </div>
-            {{-- <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-              </form> --}}
+          
         </div>
 
     </div>

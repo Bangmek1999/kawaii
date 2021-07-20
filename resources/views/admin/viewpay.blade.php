@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.addmin')
 @section('content')
 @if (Auth::user()->hasRole('developer'))
     <div class="container">

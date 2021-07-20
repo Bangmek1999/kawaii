@@ -1,7 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.addmin')
 @section('content')
-    <div class="container">
-        <h2>ข้อมูลลูกค้า</h2>
+@if (Auth::user()->hasRole('developer'))
+<div class="container">
+    <div class="row">
+        <div class="col">
+         <h2 >ข้อมูลลูกค้า</h2>
+        </div>
+        <div class="col">
+            
+        </div>
+      </div>    
+    <div class="card">
         <table class="table">
             <thead>
                 <tr>
@@ -21,12 +30,17 @@
                         <td>{{ $row->PotName }}</td>
                         <td>{{ $row->Mac }}</td>
                         <td>{{ $row->status }}</td>
-                        <td> <a href="{{route('admin.edit',$row->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td> <a href="{{ route('admin.edit', $row->id) }}" class="btn btn-primary">Edit</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+    
+   
+</div>
+@endif
    
 @endsection
 

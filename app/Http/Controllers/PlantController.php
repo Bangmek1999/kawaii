@@ -30,7 +30,7 @@ class PlantController extends Controller
         }
          if (auth::user()->hasRole('developer')) {
             $pot_data = PotUser::all();
-            return view('home', compact('pot_data'));
+            return view('admin.admin', compact('pot_data'));
         }
         return view('regispot');
 

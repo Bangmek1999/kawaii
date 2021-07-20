@@ -81,55 +81,7 @@
         </div>
     @endif
 
-    @if (Auth::user()->hasRole('developer'))
-        <div class="container">
-            <h2>ข้อมูลลูกค้า</h2>
-            <div class="card">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">PotName</th>
-                            <th scope="col">Mac</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($pot_data as $row)
-                            <tr>
-                                <th scope="row">{{ $row->id }}</th>
-                                <td>{{ $row->User }}</td>
-                                <td>{{ $row->PotName }}</td>
-                                <td>{{ $row->Mac }}</td>
-                                <td>{{ $row->status }}</td>
-                                <td> <a href="{{ route('admin.edit', $row->id) }}" class="btn btn-primary">Edit</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
+   
 </body>
 
 </html>

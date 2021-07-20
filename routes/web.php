@@ -45,4 +45,4 @@ Route::get('/Payment', 'PlantController@Payment')->name('Payment');
 
 Route::view('/file-upload', 'Payment');
 Route::post('/file-upload', 'PhotoController@store');
-Route::get('/viewpay', 'PhotoController@viewUploads');
+Route::get('/viewpay', 'PhotoController@viewUploads')->name('viewpay');
