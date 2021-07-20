@@ -276,6 +276,7 @@ window.onload = function() {
         if (data == 'option1') {
             return option1(data);
         } else if (data == 'option2') {
+            console.log("Is turn option2");
             return option2(data);
         } else if (data == 'option3') {
             return option3(data);
