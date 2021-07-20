@@ -16,10 +16,10 @@ class PlantController extends Controller
      */
     public function index()
     {
-        $user = DB::table('pot_users')->pluck('User');
-        foreach ($user as $post) {
-            if ($post == Auth::user()->name) {
-                $dataPot = PotUser::where([['User', Auth::user()->name], ['status', 2]])->first();
+        $Email = DB::table('pot_users')->pluck('Email');
+        foreach ($Email as $post) {
+            if ($post == Auth::user()->email) {
+                $dataPot = PotUser::where([['Email', Auth::user()->email], ['status', 2]])->first();
                 if (isset($dataPot)) {
                     //return response()->json('no');
                     return view('Payment');
@@ -60,8 +60,8 @@ class PlantController extends Controller
     }
     public function avata()
     {
-        $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User', $n)->get();
+        $n = Auth::user()->email;
+        $y = DB::table('pot_users')->where('Email', $n)->get();
         foreach ($y as $post) {
             $i = $post->avata;
             return response()->json($i);
@@ -69,8 +69,8 @@ class PlantController extends Controller
     }
     public function date_avata()
     {
-        $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User', $n)->get();
+        $n = Auth::user()->email;
+        $y = DB::table('pot_users')->where('Email', $n)->get();
         foreach ($y as $post) {
             $i = $post->created_at;
             return response()->json($i);
@@ -78,8 +78,8 @@ class PlantController extends Controller
     }
     public function user_pot()
     {
-        $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User', $n)->get();
+        $n = Auth::user()->email;
+        $y = DB::table('pot_users')->where('Email', $n)->get();
         foreach ($y as $post) {
             $i = $post->PotName;
             return response()->json($i);
@@ -168,8 +168,8 @@ class PlantController extends Controller
     }
     public function url_rawdata()
     {
-        $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User', $n)->get();
+        $n = Auth::user()->email;
+        $y = DB::table('pot_users')->where('Email', $n)->get();
         foreach ($y as $post) {
             $i = $post->Mac;
         }
@@ -178,8 +178,8 @@ class PlantController extends Controller
     }
     public function potuser()
     {
-        $n = Auth::user()->name;
-        $y = DB::table('pot_users')->where('User', $n)->get();
+        $n = Auth::user()->email;
+        $y = DB::table('pot_users')->where('Email', $n)->get();
         foreach ($y as $post) {
             $i = $post->Mac;
         }

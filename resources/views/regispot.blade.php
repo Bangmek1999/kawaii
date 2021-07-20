@@ -31,6 +31,8 @@
                     {!! Form::text('Mac', null, ['class' => 'form-control form-control-user']) !!}
                 </div>
                 {!! Form::text('status', '1', ['class' => 'invisible']) !!}
+                {!! Form::text('Email', Auth::user()->email, ['class' => 'invisible']) !!}
+
                 <br>
                 {!! Form::label('Select Avata', null, ['class' => ' text-gray-900 ']) !!}
                 <div class="row">

@@ -35,6 +35,7 @@
 
 
     <div class="container">
+        {{ Auth::user()->email }}
         {{-- <h5 id="Temp"> </h5>
         <h5 id="Humidity"> </h5>
         <h5 id="EC"> </h5>
