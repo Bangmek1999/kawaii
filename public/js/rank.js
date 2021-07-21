@@ -107,7 +107,7 @@ function rank() {
     let result_rank = a + b + c + d;
     console.log('-------------------------------');
     console.log(result_rank);
-    document.getElementById("rank_result").innerHTML = result_rank;
+    document.getElementById("rank_result").value = result_rank;
 
 
 }

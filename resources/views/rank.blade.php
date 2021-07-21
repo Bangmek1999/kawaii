@@ -86,6 +86,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    Name: <input type="text" id="rank_result" value="">
                     {!! Form::open(['class' => 'user', 'action' => 'PlantController@store', 'method' => 'POST']) !!}
                     <div class="text-center ">
                         <div class="text-center">

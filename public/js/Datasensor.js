@@ -6,6 +6,7 @@ window.onload = function() {
         light(LightPoints);
         hp();
         sumd();
+        avata();
     }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];
@@ -408,6 +409,8 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return sprout_light();
                 }
+                console.log(sum.moist);
+
                 document.getElementById("mp4_src").src = "../../img/sprout/hot.mp4";
                 document.getElementById("myVideo").load();
             } else if (50 >= Final_Result) {
