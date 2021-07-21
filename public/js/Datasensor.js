@@ -1,13 +1,13 @@
 window.onload = function() {
-    setTimeout(function() {
-        temps(temp);
-        air(DHT11_air);
-        soil(EC);
-        light(LightPoints);
-        hp();
-        sumd();
-        avata();
-    }, 2000);
+    // setTimeout(function() {
+    //     temps(temp);
+    //     air(DHT11_air);
+    //     soil(EC);
+    //     light(LightPoints);
+    //     hp();
+    //     sumd(result);
+    //     avata();
+    // }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];
     var EcPoint2 = [];
@@ -24,7 +24,7 @@ window.onload = function() {
     var temp = [];
     var EC = [];
 
-
+    var result = [];
 
     function addData(data) {
         for (var i = data.length - 1; i < data.length; i++) {
@@ -65,8 +65,16 @@ window.onload = function() {
                 let z = EcPoint3;
 
                 EC = (x / 3) + (y / 3) + (z / 3);
+                console.log('All_EC' + EC);
             }
         }
+        return temps(temp),
+            air(DHT11_air),
+            soil(EC),
+            light(LightPoints),
+            hp(),
+            sumd(result);
+
     }
     // $.getJSON("http://127.0.0.1:8000/rawData", addData);
     $.getJSON("https://devplant.csmju.com/rawData", addData);
@@ -216,9 +224,9 @@ window.onload = function() {
         }
     }
     //------------------------------------------------constData-----------------------------------------------------------------------------------
-    var result = [];
 
-    function sumd() {
+
+    function sumd(result) {
         result = sum.ec + sum.temp + sum.light;
         console.log(result);
         if (result == "moistcooldark" || result == "moistcoollight" || result == "moisthotdark" | result == "moisthotlight" || result == "moistdark" || result == "moistlight" || result == "moistcool" || result == "moisthot" || result == "moist") {
@@ -255,7 +263,6 @@ window.onload = function() {
             sum.happy = 'happy';
             console.log("Is happy");
             return avata();
-
         }
     }
 
