@@ -68,7 +68,7 @@ window.onload = function() {
             }
         }
     }
-    $.getJSON("http://127.0.0.1:8000/rawData", addData);
+    $.getJSON("https://devplant.csmju.com/", addData);
 
     //-----------------------------------date---------------------------------------------------------------------------
     const hp_resulte = {
@@ -262,14 +262,14 @@ window.onload = function() {
 
 
     }
-    $.getJSON("http://127.0.0.1:8000/date_avata", addDate);
+    $.getJSON("https://devplant.csmju.com/date_avata", addDate);
 
     //-------------------------------------------avata-------------------------------------------------------------------
     function pot_user(user_pot) {
         document.getElementById("User_pot").innerHTML = user_pot;
 
     }
-    $.getJSON("http://127.0.0.1:8000/user_pot", pot_user);
+    $.getJSON("https://devplant.csmju.com/user_pot", pot_user);
 
     function avata(data) {
         console.log(data);
@@ -285,7 +285,7 @@ window.onload = function() {
             return option4(data);
         }
     }
-    $.getJSON("http://127.0.0.1:8000/avata", avata);
+    $.getJSON("https://devplant.csmju.com/avata", avata);
 
     //----------------------------------------Option1-----------------------------------------------------------------------
     function option1(options) {
