@@ -1,13 +1,7 @@
 window.onload = function() {
-    // setTimeout(function() {
-    //     temps(temp);
-    //     air(DHT11_air);
-    //     soil(EC);
-    //     light(LightPoints);
-    //     hp();
-    //     sumd(result);
-    //     avata();
-    // }, 2000);
+    setTimeout(function() {
+        $.getJSON("https://devplant.csmju.com/avata", avata);
+    }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];
     var EcPoint2 = [];
@@ -318,7 +312,6 @@ window.onload = function() {
         }
     }
     // $.getJSON("http://127.0.0.1:8000/avata", avata);
-    $.getJSON("https://devplant.csmju.com/avata", avata);
 
     //----------------------------------------Option1-----------------------------------------------------------------------
     function option1(options) {
@@ -416,8 +409,8 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return sprout_light();
                 }
-                console.log(sum.moist);
 
+                console.log(sum.moist);
                 document.getElementById("mp4_src").src = "../../img/sprout/hot.mp4";
                 document.getElementById("myVideo").load();
             } else if (50 >= Final_Result) {
