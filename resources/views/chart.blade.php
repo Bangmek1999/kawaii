@@ -182,7 +182,7 @@
                 }
                 $("#TempContainer").CanvasJSChart(optionsTemp);
 
-                for (var i = data.length - 200; i < data.length; i++) {
+                for (var i = data.length - 400; i < data.length; i++) {
                     ECdataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].EC3
@@ -191,7 +191,7 @@
                 $("#ECContainer").CanvasJSChart(optionsEC);
 
             }
-            $.getJSON("https://devplant.csmju.com/rawData", addData);
+            $.getJSON("http://127.0.0.1:8000/rawData", addData);
 
         }
 

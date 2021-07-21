@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+.body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin: 5em auto;
+    padding: auto;
+}
+
+.container {
+    max-width: 100%;
+    margin: 2em auto;
+}
+
+.leader_card2 {
+    display: flex;
+    justify-content: center;
+}
+
+.card_winner {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 7em;
+    margin-bottom: 0;
+    ;
+}
+
+.card_winner i {
+    position: relative;
+    bottom: 55px;
+    left: 150px;
+}
+
+.card_winner img {
+    border-radius: 50%;
+}
+
+.leader_card1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 5em; */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card_first_runner_up {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.card_first_runner_up i {
+    position: relative;
+    bottom: 40px;
+    left: 150px;
+}
+
+.card_first_runner_up img {
+    border-radius: 50%;
+}
+
+.card_second_runner_up {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.card_second_runner_up i {
+    position: relative;
+    bottom: 40px;
+    left: 150px;
+}
+
+.card_second_runner_up img {
+    border-radius: 50%;
+}
+
+.table_another_player {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media (max-width: 800px) {}
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media (max-width: 600px) {
+    .leader_card1 {
+        flex-direction: column;
+    }
+    .leader_card2 {
+        flex-direction: column;
+    }
+}

@@ -6,7 +6,7 @@ window.onload = function() {
         light(LightPoints);
         hp();
         sumd();
-
+        avata();
     }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];
@@ -68,7 +68,7 @@ window.onload = function() {
             }
         }
     }
-    $.getJSON("https://devplant.csmju.com/rawData", addData);
+    $.getJSON("http://127.0.0.1:8000/rawData", addData);
 
     //-----------------------------------date---------------------------------------------------------------------------
     const hp_resulte = {
@@ -262,18 +262,19 @@ window.onload = function() {
 
 
     }
-    $.getJSON("https://devplant.csmju.com/date_avata", addDate);
+    $.getJSON("http://127.0.0.1:8000/date_avata", addDate);
 
     //-------------------------------------------avata-------------------------------------------------------------------
     function pot_user(user_pot) {
         document.getElementById("User_pot").innerHTML = user_pot;
 
     }
-    $.getJSON("https://devplant.csmju.com/user_pot", pot_user);
+    $.getJSON("http://127.0.0.1:8000/user_pot", pot_user);
 
     function avata(data) {
         console.log(data);
         if (data == 'option1') {
+            console.log("Is turn option1");
             return option1(data);
         } else if (data == 'option2') {
             console.log("Is turn option2");
@@ -284,7 +285,7 @@ window.onload = function() {
             return option4(data);
         }
     }
-    $.getJSON("https://devplant.csmju.com/avata", avata);
+    $.getJSON("http://127.0.0.1:8000/avata", avata);
 
     //----------------------------------------Option1-----------------------------------------------------------------------
     function option1(options) {
@@ -301,6 +302,7 @@ window.onload = function() {
                 } else if (sum.dark == 'dark') {
                     return seed_dark();
                 } else if (sum.hot == 'hot') {
+                    console.log("return is true");
                     return seed_hot();
                 } else if (sum.light_select == 'light') {
                     return seed_light();
@@ -367,6 +369,7 @@ window.onload = function() {
                 if (sum.happy == 'happy') {
                     return sprout_happy();
                 } else if (sum.moist == 'moist') {
+                    console.log("Is turn moist option2");
                     return sprout_moist();
                 } else if (sum.dry == 'dry') {
                     return sprout_dry();
@@ -377,7 +380,6 @@ window.onload = function() {
                 } else if (sum.hot == 'hot') {
                     return sprout_hot();
                 } else if (sum.light_select == 'light') {
-                    console.log("return is true");
                     return sprout_light();
                 }
             } else if (50 >= Final_Result) {

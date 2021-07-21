@@ -95,7 +95,10 @@ class PlantController extends Controller
     {
         return view('potconfig.potcreate');
     }
-
+    public function rank()
+    {
+        return view('rank');
+    }
     /**
      * Store a newly created resource in storage.
      *

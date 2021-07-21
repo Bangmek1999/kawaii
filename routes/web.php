@@ -41,6 +41,7 @@ Route::get('/user_pot','PlantController@user_pot')->name('/user_pot');
 
 Route::get('/roles', 'PotController@Permission');
 Route::get('/Payment', 'PlantController@Payment')->name('Payment');
+Route::get('/rank', 'PlantController@rank')->name('rank');
 
 
 Route::view('/file-upload', 'Payment');
