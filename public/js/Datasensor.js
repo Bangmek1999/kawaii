@@ -6,7 +6,6 @@ window.onload = function() {
         light(LightPoints);
         hp();
         sumd();
-        avata();
     }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];
@@ -68,7 +67,9 @@ window.onload = function() {
             }
         }
     }
-    $.getJSON("https://devplant.csmju.com/", addData);
+    // $.getJSON("http://127.0.0.1:8000/rawData", addData);
+    $.getJSON("https://devplant.csmju.com/rawData", addData);
+
 
     //-----------------------------------date---------------------------------------------------------------------------
     const hp_resulte = {
@@ -222,23 +223,38 @@ window.onload = function() {
         if (result == "moistcooldark" || result == "moistcoollight" || result == "moisthotdark" | result == "moisthotlight" || result == "moistdark" || result == "moistlight" || result == "moistcool" || result == "moisthot" || result == "moist") {
             sum.moist = 'moist';
             console.log("Is moist");
+            return avata();
 
         } else if (result == 'drycooldark' || result == 'drycoollight' || result == 'dryhotdark' || result == 'dryhotlight' || result == 'drydark' || result == 'drylight' || result == 'drycool' || result == 'dryhot' || result == 'dry') {
             sum.dry = 'dry';
+            console.log("Is dry");
+            return avata();
 
         } else if (result == 'cooldark' || result == 'coollight' || result == 'cool') {
             sum.cool = 'cool';
+            console.log("Is cool");
+            return avata();
 
         } else if (result == 'hotdark' || result == 'hotlight' || result == 'hot') {
             sum.hot = 'hot';
+            console.log("Is hot");
+            return avata();
 
         } else if (result == 'dark') {
             sum.dark = 'dark';
+            console.log("Is dark");
+            return avata();
 
         } else if (result == 'light') {
             sum.light_select = 'light';
+            console.log("Is light");
+            return avata();
+
         } else if (result == '') {
             sum.happy = 'happy';
+            console.log("Is happy");
+            return avata();
+
         }
     }
 
@@ -259,32 +275,41 @@ window.onload = function() {
         // document.getElementById("date1").innerHTML = date1;
         // document.getElementById("date2").innerHTML = date2;
         document.getElementById("Difference_In_Days").innerHTML = 'วันปลูก' + Final_Result + '    วัน';
-
+        console.log('date' + Final_Result);
 
     }
+    // $.getJSON("http://127.0.0.1:8000/date_avata", addDate);
     $.getJSON("https://devplant.csmju.com/date_avata", addDate);
 
     //-------------------------------------------avata-------------------------------------------------------------------
     function pot_user(user_pot) {
         document.getElementById("User_pot").innerHTML = user_pot;
-
     }
+    // $.getJSON("http://127.0.0.1:8000/user_pot", pot_user);
     $.getJSON("https://devplant.csmju.com/user_pot", pot_user);
 
     function avata(data) {
-        console.log(data);
+        console.log('Avata_function' + data);
+
         if (data == 'option1') {
             console.log("Is turn option1");
             return option1(data);
+
         } else if (data == 'option2') {
             console.log("Is turn option2");
             return option2(data);
+
         } else if (data == 'option3') {
+            console.log("Is turn option3");
             return option3(data);
+
         } else if (data == 'option4') {
+            console.log("Is turn option4");
             return option4(data);
+
         }
     }
+    // $.getJSON("http://127.0.0.1:8000/avata", avata);
     $.getJSON("https://devplant.csmju.com/avata", avata);
 
     //----------------------------------------Option1-----------------------------------------------------------------------
@@ -339,6 +364,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bud_light();
                 }
+
             } else if (50 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return bloom_happy();
@@ -382,6 +408,8 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return sprout_light();
                 }
+                document.getElementById("mp4_src").src = "../../img/sprout/hot.mp4";
+                document.getElementById("myVideo").load();
             } else if (50 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return bud_happy();
