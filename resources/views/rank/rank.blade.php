@@ -145,7 +145,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $rankdatas)
+                @foreach ($posts as $rankdatas)
                     <tr class="table-success">
                         <td>{{ $rankdatas->username }}</td>
                         <td>{{ $rankdatas->potname }}</td>

@@ -140,7 +140,7 @@ body {
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $rankdatas)
+                @foreach ($posts as $rankdatas)
                 <tr>
                 <td >{{ $rankdatas->id }}</td>
                 <td>{{ $rankdatas->username }}</td>

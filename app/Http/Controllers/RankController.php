@@ -20,10 +20,13 @@ class RankController extends Controller
                 $users = rank::all();
                 $n = Auth::user()->name;
                 $userpot = DB::table('ranks')->where('username', $n)->get();
-                return view('rank.rank', compact('userpot', 'users'));
+                $posts = rank::orderBy('rank_point', 'DESC')->get();
+
+                return view('rank.rank', compact('userpot', 'users','posts'));
             }
         }
-        return view('rank.register', compact('users'));
+        $posts = rank::orderBy('rank_point', 'DESC')->get();
+        return view('rank.register', compact('users','posts'));
     }
 
     public function pot_user()
@@ -35,7 +38,8 @@ class RankController extends Controller
                 $users = rank::all();
                 $n = Auth::user()->name;
                 $userpot = DB::table('ranks')->where('username', $n)->get();
-                return view('rank.rank', compact('userpot', 'users'));
+                $posts = rank::orderBy('rank_point', 'DESC')->get();
+                return view('rank.rank', compact('userpot', 'users','posts'));
                 // return view('regis_rank');
             }
         }
