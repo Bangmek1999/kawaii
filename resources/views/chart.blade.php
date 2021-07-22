@@ -191,8 +191,8 @@
                 $("#ECContainer").CanvasJSChart(optionsEC);
 
             }
-            // $.getJSON("http://127.0.0.1:8000/rawData", addData);
-            $.getJSON("https://devplant.csmju.com/rawData", addData);
+            $.getJSON("http://127.0.0.1:8000/rawData", addData);
+            // $.getJSON("https://devplant.csmju.com/rawData", addData);
 
         }
 

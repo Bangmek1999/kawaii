@@ -68,7 +68,6 @@
                     <img class=" img-fluid" src="/img/seed_1.png">
                     <div class="card-body">
                         <h1 class="card-title">อันดับ3</h1>
-                        <h4>ใส่สบงแล้วทรงพลัง</h4>
                     </div>
                 </div>
             </div>

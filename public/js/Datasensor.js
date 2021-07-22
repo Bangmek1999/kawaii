@@ -1,6 +1,8 @@
 window.onload = function() {
     setTimeout(function() {
         $.getJSON("https://devplant.csmju.com/avata", avata);
+        // $.getJSON("http://127.0.0.1:8000/avata", avata);
+
     }, 2000);
     //-----------------------------------data---------------------------------------------------------------------------
     var EcPoint1 = [];

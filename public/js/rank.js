@@ -20,7 +20,7 @@ var Temp_sum = [];
 
 
 function addData(data) {
-    for (var i = data.length - 500; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         EcPoint1.push(
             data[i].EC1
         );
