@@ -52,12 +52,12 @@ Route::get('/viewpay', 'PhotoController@viewUploads')->name('viewpay');
 
 // Route::view('/form', 'rank');
 Route::post('/submit', 'RankController@save');
-Route::get('/rank', 'RankController@index');
+Route::get('/ranks', 'RankController@index')->name('ranks');
 
 // Route::post('edit/{id}','RankController@edit');
 
 Route::resource('/rank','RankController');
-Route::get('/rank', 'RankController@pot_user')->name('rank');
+Route::get('/rank', 'RankController@pot_user');
 Route::post('/submitrank/{id}', 'RankController@update');
 
 // Route::put('/rank/{rank}  ','RankController@update')->name('rank.update');

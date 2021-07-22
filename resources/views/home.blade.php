@@ -69,7 +69,7 @@
                             </div>
                             <div class="col">
                                 <h1 class="text-name ">
-                                    <a href="{{ route('rank') }}">
+                                    <a href="{{ route('ranks') }}">
                                         <h1>Rank</h1>
                                     </a>
                                 </h1>

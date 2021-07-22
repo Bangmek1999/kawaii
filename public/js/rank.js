@@ -20,7 +20,7 @@ var Temp_sum = [];
 
 
 function addData(data) {
-    for (var i = data.length - 3000; i < data.length; i++) {
+    for (var i = data.length - 500; i < data.length; i++) {
         EcPoint1.push(
             data[i].EC1
         );
@@ -51,7 +51,7 @@ function addData(data) {
 
     }
     if (EcPoint1) {
-        for (var i = EcPoint1.length - 3000; i < EcPoint1.length; i++) {
+        for (var i = EcPoint1.length - 500; i < EcPoint1.length; i++) {
 
             let x = EcPoint1[i];
             let y = EcPoint2[i];
@@ -61,7 +61,7 @@ function addData(data) {
         }
     }
     if (dallas_temp1) {
-        for (var i = dallas_temp1.length - 3000; i < dallas_temp1.length; i++) {
+        for (var i = dallas_temp1.length - 500; i < dallas_temp1.length; i++) {
 
             let x = dallas_temp1[i];
             let y = dallas_temp2[i];
@@ -113,7 +113,7 @@ function rank() {
 function Call_EC(Ec_sum) {
     let sum = 0;
     console.log("Is return function CallEC");
-    for (var i = Ec_sum.length - 3000; i < Ec_sum.length; i++) {
+    for (var i = Ec_sum.length - 500; i < Ec_sum.length; i++) {
         let x = Ec_sum[i];
         if (1 <= x && x <= 40) {
             sum = sum += 0.5;
@@ -145,7 +145,7 @@ function Call_EC(Ec_sum) {
 function Call_Temp(Temp_sum) {
     let sum = 0;
     console.log("Is return function CallTemp");
-    for (var i = Temp_sum.length - 3000; i < Temp_sum.length; i++) {
+    for (var i = Temp_sum.length - 500; i < Temp_sum.length; i++) {
         let x = Temp_sum[i];
         if (1 <= x && x <= 15) {
             sum = sum += 0.5;
@@ -176,7 +176,7 @@ function Call_Temp(Temp_sum) {
 function Call_Air(DHT11_air) {
     let sum = 0;
     console.log("Is return function Call_Air");
-    for (var i = DHT11_air.length - 3000; i < DHT11_air.length; i++) {
+    for (var i = DHT11_air.length - 500; i < DHT11_air.length; i++) {
         let x = DHT11_air[i];
         if (1 <= x && x < 65) {
             sum = sum += 0.5;
@@ -209,7 +209,7 @@ function Call_Air(DHT11_air) {
 function Call_Light(LightPoints) {
     let sum = 0;
     console.log("Is return function Call_Light");
-    for (var i = LightPoints.length - 3000; i < LightPoints.length; i++) {
+    for (var i = LightPoints.length - 500; i < LightPoints.length; i++) {
         let x = LightPoints[i];
         if (0 <= x && x < 499) {
             sum = sum += 0.5;
