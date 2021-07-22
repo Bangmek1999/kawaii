@@ -252,4 +252,4 @@ function name_user(user_name) {
 
 }
 // $.getJSON("http://127.0.0.1:8000/User_name", name_user);
-$.getJSON("https://devplant.csmju.com/user_pot", pot_user);
+$.getJSON("https://devplant.csmju.com/User_name", pot_user);
