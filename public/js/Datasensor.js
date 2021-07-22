@@ -330,7 +330,7 @@ window.onload = function() {
                 } else if (sum.dark == 'dark') {
                     return seed_dark();
                 } else if (sum.hot == 'hot') {
-                    console.log("return is true");
+                    // console.log("return is true");
                     return seed_hot();
                 } else if (sum.light_select == 'light') {
                     return seed_light();
