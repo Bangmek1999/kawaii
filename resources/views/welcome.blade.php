@@ -143,11 +143,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class=" mb-4">Built with Bootstrap 4</h2>
+                    <h2 class=" mb-4">Plant Kawaii Project</h2>
                     <p class="text-50">
-                        Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-
-                        . The theme is open source, and you can use it for any purpose, personal or commercial.
+                        เป็นโปรเจคที่จัดทำขึ้น เพื่อให้การปลูกต้นไม้เป็นเรื่องสนุก เพราะเราสามารถรับรู้สุขภาพของกับไม้ได้ เปรียบเสมือนการสื่อสารกับต้นไม้ของเรา
+                         และเราต้องหมั่นสังเกตและดูแลน้องๆของเราด้วยว่าน้องต้องการอะไร ดูแลน้องๆให้สุดยอดและพาน้องเข้าไปจัดอันดับต้นไม้สุดยอดสุขภาพดีเลย!!
                     </p>
                 </div>
             </div>
@@ -176,8 +175,10 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">น้อง Seed Kawaii</h4>
+                                        <p class="card-text">น้อง Seed Kawaii เป็นเมล็ด 
+                                            เกิดเมื่อผู้ใช้หย่อนเมล็ดลงกระถาง
+                                            น้องจะใช้เวลาโตแป๊บเดียวถ้าดูแลน้องดีๆ</p>
                                     </div>
                                 </div>
                             </div>
@@ -200,8 +201,11 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">น้อง Sprout Kawaii</h4>
+                                        <p class="card-text">น้อง Sprout Kawaii เป็นต้นอ่อน 
+                                            เกิดเมื่อผู้ใช้หย่อนต้นอ่อน ลงกระถาง
+                                            น้องจะใช้เวลาโตนิสนึง และน้องค่อนข้างบอบบาง
+                                            เพราะฉนั้นแล้วต้องหมั่นดูแลน้องบ่อยๆนะ</p>
                                     </div>
                                 </div>
                             </div>
@@ -224,8 +228,10 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">น้อง Buds Kawaii</h4>
+                                        <p class="card-text">น้อง Buds เติบโตมาจาก น้อง Sprout Kawaii น้องจะสูงเร็ว ถ้าได้รับ
+                                            แสงแดดและน้ำเพียงพอ น้องชอบอากาศสบายๆ ไม่ร้อนและหนาวเกินไป
+                                            และน้องม่ชอบที่ร่มๆเท่าไหร่</p>
                                     </div>
                                 </div>
                             </div>
@@ -248,8 +254,10 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">น้อง Blooming Kawaii</h4>
+                                        <p class="card-text">น้องเกิดจาก น้อง Buds Kawaii ที่ได้รับการดูแลมาอย่างดี
+                                            ถ้าน้องมีสุขภาพดีและอารมณ์ดี น้องจะมีดอกไม้บนศรีษะ
+                                            น้องชอบแดดมาก แต่ไม่ชอบอากาศร้อนนะ</p>
                                     </div>
                                 </div>
                             </div>
