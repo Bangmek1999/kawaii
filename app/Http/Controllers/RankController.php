@@ -21,7 +21,6 @@ class RankController extends Controller
                 $n = Auth::user()->name;
                 $userpot = DB::table('ranks')->where('username', $n)->get();
                 $posts = rank::orderBy('rank_point', 'DESC')->get();
-
                 return view('rank.rank', compact('userpot', 'users','posts'));
             }
         }
