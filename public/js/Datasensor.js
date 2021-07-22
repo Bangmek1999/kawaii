@@ -394,7 +394,7 @@ window.onload = function() {
     //----------------------------------------Option2-----------------------------------------------------------------------
     function option2(data) {
         if (data == 'option2') {
-            if (40 >= Final_Result) {
+            if (35 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return sprout_happy();
                 } else if (sum.moist == 'moist') {
@@ -415,7 +415,7 @@ window.onload = function() {
                 console.log(sum.moist);
                 document.getElementById("mp4_src").src = "../../img/sprout/hot.mp4";
                 document.getElementById("myVideo").load();
-            } else if (50 >= Final_Result) {
+            } else if (36 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return bud_happy();
                 } else if (sum.moist == 'moist') {
@@ -431,7 +431,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bud_light();
                 }
-            } else if (70 >= Final_Result) {
+            } else if (46 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return bloom_happy();
                 } else if (sum.moist == 'moist') {
@@ -447,7 +447,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bloom_light();
                 }
-            } else {
+            } else if (66 >= Final_Result) {
                 document.getElementById("mp4_src").src = "../../img/bloom/dead.mp4";
                 document.getElementById("myVideo").load();
             }
@@ -474,7 +474,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bud_light();
                 }
-            } else if (15 >= Final_Result) {
+            } else if (11 >= Final_Result) {
                 if (sum.happy == 'happy') {
                     return bloom_happy();
                 } else if (sum.moist == 'moist') {
@@ -490,7 +490,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bloom_light();
                 }
-            } else if (35 >= Final_Result) {
+            } else if (31 >= Final_Result) {
                 document.getElementById("mp4_src").src = "../../img/Bloom/dead.mp4";
                 document.getElementById("myVideo").load();
             }
@@ -515,7 +515,7 @@ window.onload = function() {
                 } else if (sum.light_select == 'light') {
                     return bloom_light();
                 }
-            } else if (25 >= Final_Result) {
+            } else if (21 >= Final_Result) {
                 document.getElementById("mp4_src").src = "../../img/Bloom/dead.mp4";
                 document.getElementById("myVideo").load();
             }
