@@ -53,7 +53,7 @@
                         <h1 class="card-title">อันดับ2</h1>
                         <h5>{{ $posts[1]->username }}</h5>
                         <h5>{{ $posts[1]->potname }}</h5>
-                        <h5>{{ $posts[1]->rank_point }}</h5>
+                        <h5>คะแนนรวม{{ $posts[1]->rank_point }}</h5>
                         <h5>{{ $posts[1]->text }}</h5>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                         <h1 class="card-title">อันดับ1</h1>
                         <h5>{{ $posts[0]->username }}</h5>
                         <h5>{{ $posts[0]->potname }}</h5>
-                        <h5>{{ $posts[0]->rank_point }}</h5>
+                        <h5>คะแนนรวม {{ $posts[0]->rank_point }}</h5>
                         <h5>{{ $posts[0]->text }}</h5>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <h1 class="card-title">อันดับ3</h1>
                         <h5>{{ $posts[2]->username }}</h5>
                         <h5>{{ $posts[2]->potname }}</h5>
-                        <h5>{{ $posts[2]->rank_point }}</h5>
+                        <h5>คะแนนรวม{{ $posts[2]->rank_point }}</h5>
                         <h5>{{ $posts[2]->text }}</h5>
                     </div>
                 </div>
