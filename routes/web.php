@@ -28,11 +28,13 @@ Route::get('/home', 'PlantController@index')->name('home');
 Route::get('/regispot', 'PlantController@not')->name('regispot');
 Route::get('/chart', 'PlantController@chart')->name('chart');
 Route::get('/admin', 'PlantController@admin')->name('admin');
-Route::put('/admin/{admin}  ','PlantController@update')->name('admin.update');
+Route::put('/admin/{admin}','PlantController@update')->name('admin.update');
 
 Route::get('/avata','PlantController@avata')->name('/avata');
 Route::get('/date_avata','PlantController@date_avata')->name('/date_avata');
 Route::get('/user_pot','PlantController@user_pot')->name('/user_pot');
+
+Route::get('/User_name','PlantController@User_name')->name('/User_name');
 
 
 // Route::get('/admin/admin', 'PlantController@admin')->name('admin');
@@ -47,3 +49,19 @@ Route::get('/rank', 'PlantController@rank')->name('rank');
 Route::view('/file-upload', 'Payment');
 Route::post('/file-upload', 'PhotoController@store');
 Route::get('/viewpay', 'PhotoController@viewUploads')->name('viewpay');
+
+// Route::view('/form', 'rank');
+Route::post('/submit', 'RankController@save');
+Route::get('/rank', 'RankController@index');
+
+// Route::post('edit/{id}','RankController@edit');
+
+Route::resource('/rank','RankController');
+Route::get('/rank', 'RankController@pot_user')->name('rank');
+Route::post('/submitrank/{id}', 'RankController@update');
+
+// Route::put('/rank/{rank}  ','RankController@update')->name('rank.update');
+
+
+
+

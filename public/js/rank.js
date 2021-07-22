@@ -72,13 +72,10 @@ function addData(data) {
     }
 }
 
-// $.getJSON("http://127.0.0.1:8000/rawData", addData);
-$.getJSON("https://devplant.csmju.com/rawData", addData);
+$.getJSON("http://127.0.0.1:8000/rawData", addData);
+// $.getJSON("https://devplant.csmju.com/rawData", addData);
 
 
-function callme() {
-    return 'success';
-}
 
 window.onload = function() {
     setTimeout(function() {
@@ -91,10 +88,10 @@ window.onload = function() {
 }
 
 const Sum_Rank = {
-    rank_ec: '',
-    rank_temp: '',
-    rank_light: '',
-    rank_air: '',
+    rank_ec: 0,
+    rank_temp: 0,
+    rank_light: 0,
+    rank_air: 0,
 
 };
 
@@ -107,6 +104,7 @@ function rank() {
     let result_rank = a + b + c + d;
     console.log('-------------------------------');
     console.log(result_rank);
+    document.getElementById("rank_show").innerHTML = 'คะแนนปัจจุบัน' + ' ' + result_rank + ' ' + 'คะแนน';
     document.getElementById("rank_result").value = result_rank;
 
 
@@ -240,13 +238,18 @@ function Call_Light(LightPoints) {
 }
 //-----------------------------------date---------------------------------------------------------------------------
 
+function pot_user(user_pot) {
+    document.getElementById("User_pot").innerHTML = 'ชื่อกระถาง' + ' ' + user_pot;
+    document.getElementById("User_pot_input").value = user_pot;
 
+}
+// $.getJSON("http://127.0.0.1:8000/user_pot", pot_user);
+$.getJSON("https://devplant.csmju.com/user_pot", pot_user);
 
+function name_user(user_name) {
+    document.getElementById("User_name").innerHTML = 'ชื่อ' + ' ' + user_name;
+    document.getElementById("User_name_input").value = user_name;
 
-
-
-// function light(LightPoints) {
-//     let addHealth = document.getElementById('Light_hp')
-//     var x = LightPoints.toString();
-
-// }
+}
+// $.getJSON("http://127.0.0.1:8000/User_name", name_user);
+$.getJSON("https://devplant.csmju.com/user_pot", pot_user);

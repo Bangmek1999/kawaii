@@ -85,7 +85,11 @@ class PlantController extends Controller
             return response()->json($i);
         } 
     }
-    
+    public function User_name()
+    {
+        $n = Auth::user()->name;
+        return response()->json($n);
+    }
     public function Payment()
     {
         return view('Payment');

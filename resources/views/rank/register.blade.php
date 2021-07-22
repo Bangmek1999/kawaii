@@ -28,16 +28,30 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
 
+body {
+            background-image: url("https://images.unsplash.com/photo-1547516508-e910d368d995?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100%;
+            margin: 0;
+        }
 
     </style>
 
 </head>
 
 <body>
+    
     <div class="container">
+        <br><br>
         <div class="row">
             <div class="col-sm">
-                <div class="card" style="background-color:rgb(219, 221, 87); width: 18rem; border-radius: 10%;">
+                <div class="card" style="background-color:rgb(219, 221, 87); max-width: 18rem; border-radius: 10%;">
                     <img class=" img-fluid" src="/img/seed_2.png">
                     <div class="card-body">
                         <h1 class="card-title">อันดับ2</h1>
@@ -45,7 +59,7 @@
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card" style="background-color:rgb(226, 100, 50); width: 18rem; border-radius: 10%;">
+                <div class="card" style="background-color:rgb(226, 100, 50); max-width: 18rem; border-radius: 10%;">
                     <img class=" img-fluid" src="/img/seed_4.png">
                     <div class="card-body">
                         <h1 class="card-title">อันดับ1</h1>
@@ -53,11 +67,11 @@
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card" style="background-color:rgb(130, 221, 87); width: 18rem; border-radius: 10%;">
+                <div class="card" style="background-color:rgb(130, 221, 87); max-width: 18rem; border-radius: 10%;">
                     <img class=" img-fluid" src="/img/seed_1.png">
                     <div class="card-body">
                         <h1 class="card-title">อันดับ3</h1>
-
+                        <h4></h4>
                     </div>
                 </div>
             </div>
@@ -68,7 +82,7 @@
         <div class="center">
             <div class="text-center">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    <h4>กรุณา เช็คอันดับ</h4>
+                    <h4>ลงทะเบียนจัดอันดับ</h4>
                 </button>
             </div>
         </div>
@@ -85,65 +99,56 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    Name: <input type="text" id="rank_result" value="">
-                    {!! Form::open(['class' => 'user', 'action' => 'PlantController@store', 'method' => 'POST']) !!}
-                    <div class="text-center ">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Pot Register</h1>
-                            <h2 id="rank_result">คะแนน</h2>
-
+                <form action="submit" method="POST" novalidate>
+                    @csrf
+                    <div class="modal-body">
+                        <h2 id="User_name">ชื่อ</h2>
+                        <h2 id="User_pot">ชื่อ</h2>
+                        <h2 id="rank_show">คะแนน</h2>
+                        {{-- <h3 id="rank_result" ></h3> --}}
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">แคปชั่น</label>
+                            <input type="text" name="text"class="form-control" id="exampleInputPassword1">
+                        </div> 
+                        <div class="form-group">
+                            <label for="rank_result"> </label>
+                            <input id="rank_result" type="number" name="rank_point"class="form-control invisible">                          
+                            <input type="text" name ="potname"class="form-control invisible" id="User_pot_input" value=''>
+                            <input type="text" name="username"class="form-control invisible" id="User_name_input" value=''>
+                            <input type="text" name="status"class="form-control invisible" value='2' >
                         </div>
-                        <div class="from-group">
-                            {!! Form::label('User', null, ['class' => 'text-gray-900 ']) !!}
-                            {!! Form::text('User', Auth::user()->name, ['class' => 'form-control form-control-user']) !!}
-                        </div>
-                        {!! Form::text('status', '1', ['class' => 'invisible']) !!}
-                        {!! Form::text('Email', Auth::user()->email, ['class' => 'invisible']) !!}
-        
-                       
-                        <br>
-                        <input type="submit" value="บันทึก" class="btn btn-primary btn-user btn-block">
                     </div>
-                    {!! Form::close() !!}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Update</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     {{-- -------------------------------------------------------------------------------- --}}
     <div class="container">
-        <table class="table shadow-sm p-3 mb-5 bg-white rounded">
+        <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Rank</th>
                     <th scope="col">User</th>
                     <th scope="col">Point</th>
                     <th scope="col">Level</th>
+                    <th scope="col">Note</th>
+
                 </tr>
             </thead>
             <tbody>
+                @foreach ($users as $rankdatas)
                 <tr>
-                    <th scope="row">4</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <td >{{ $rankdatas->id }}</td>
+                <td>{{ $rankdatas->username }}</td>
+                <td>{{ $rankdatas->potname }}</td>
+                <td>{{ $rankdatas->rank_point }}</td>
+                <td>{{ $rankdatas->text }}</td>
                 </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

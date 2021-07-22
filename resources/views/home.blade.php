@@ -28,60 +28,89 @@
 <body>
     @if (Auth::user()->hasRole('manager'))
         <div>
-        
+
             <div class="container">
                 <video id="myVideo" autoplay muted loop>
                     <source id="mp4_src" src="/img/wall_seed.mp4" type="video/mp4">
                 </video>
                 <div class="overlay">
                     <h1 id="User_pot"></h1>
-                    
-                        
-                      <h2 id="Difference_In_Days"> </h2>
-                        <div class="hp">
-                            <div class="gage">
-                                <div class="bar">
-                                    <span id="sumhp" class="lvl" style="width: 100%"></span>
-                                </div>
+
+
+                    <h2 id="Difference_In_Days"> </h2>
+                    <div class="hp">
+                        <div class="gage">
+                            <div class="bar">
+                                <span id="sumhp" class="lvl" style="width: 100%"></span>
                             </div>
                         </div>
-                        
+                    </div>
+
                 </div>
             </div>
 
             <div class="footer">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h1 class="btn ">
-                                <i class="fas fa-chart-line" href="{{ route('dashboard') }}"></i>
-                                <a href="{{ route('dashboard') }}">Dashboard</a>
-
-                            </h1>
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="btn invisible">
+                                    <a href="{{ route('dashboard') }}">
+                                        <h1>Dashboard</h1>
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="col">
+                                <h1 class="text-name ">
+                                    <a href="{{ route('dashboard') }}">
+                                        <h1>Dashboard</h1>
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="col">
+                                <h1 class="text-name ">
+                                    <a href="{{ route('rank') }}">
+                                        <h1>Rank</h1>
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="col">
+                                <h1 class="text-name">
+                                    {{-- <i class="fas fa-seedling"></i> --}}
+                                    Animation
+                                </h1>
+                            </div>
+                            <div class="col">
+                                <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </h1>
+                            </div>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h1 class="text-name">
-                                <i class="fas fa-seedling"></i>
-                                Animation
-                            </h1>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h1 class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </h1>
-                        </div>
+                        {{-- <div class="col-xs-12 col-sm-6 col-md-4">
+                            
+                        </div> --}}
+                        {{-- <div class="col-xs-12 col-sm-6 col-md-4">
+                            
+                        </div> --}}
+                        {{-- <div class="col-xs-12 col-sm-6 col-md-4">
+                           
+                        </div> --}}
+                        {{-- <div class="col-xs-12 col-sm-6 col-md-4">
+                           
+                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     @endif
 
-   
+
 </body>
 
 </html>

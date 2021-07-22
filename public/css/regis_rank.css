@@ -1,0 +1,136 @@
+html,
+body {
+    /* background-image: url('../../img/tree_rank.jpg'); */
+    /* background-image: url("https://thumbs.dreamstime.com/b/wooden-background-white-card-text-rank-yellow-green-paper-clips-plant-pot-view-above-213740642.jpg"); */
+    background-color: #afdbd2;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.img-thumbnail {
+    position: absolute;
+    top: 300px;
+    left: 1500px;
+    width: 20%;
+    height: 50%;
+}
+
+img {
+    border-radius: 50%;
+    max-width: 15rem;
+}
+
+.hp {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.bar {
+    height: 45px;
+    position: relative;
+    background: #555;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.bar>span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lvl {
+    background-color: #078a25;
+    background-image: linear-gradient(to bottom, #078a25);
+}
+
+#EC_hp {
+    content: "";
+    font-size: 0px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+#Temp_hp {
+    content: "";
+    font-size: 0px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+#Humidity_hp {
+    content: "";
+    font-size: 0px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+#Light_hp {
+    content: "";
+    font-size: 0px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+.progress_bar .pro-bar {
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+    height: 4px;
+    margin-bottom: 4px;
+    margin-top: 3px;
+    position: relative;
+}
+
+.progress_bar .progress-bar-inner {
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+    display: block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 1s linear 0s;
+}
+
+.progress_bar .progress-bar-inner:after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    right: -4px;
+    top: -5px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+}
