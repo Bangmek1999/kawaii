@@ -158,7 +158,7 @@
 
 
             function addData(data) {
-                for (var i = data.length - 500; i < data.length; i++) {
+                for (var i = data.length - 200; i < data.length; i++) {
                     dataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].DHT_Humidity
@@ -182,7 +182,7 @@
                 }
                 $("#TempContainer").CanvasJSChart(optionsTemp);
 
-                for (var i = data.length - 400; i < data.length; i++) {
+                for (var i = data.length - 200; i < data.length; i++) {
                     ECdataPoints.push({
                         x: new Date(data[i].time_stamp),
                         y: data[i].EC3
