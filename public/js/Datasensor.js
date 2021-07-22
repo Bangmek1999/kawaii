@@ -534,7 +534,7 @@ window.onload = function() {
     }
 
     function seed_dry() {
-        document.getElementById("mp4_src").src = "../../img/buds/dry.mp4";
+        document.getElementById("mp4_src").src = "../../img/seed/dry.mp4";
         document.getElementById("myVideo").load();
     }
 
